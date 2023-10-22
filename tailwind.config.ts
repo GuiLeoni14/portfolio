@@ -7,8 +7,7 @@ module.exports = {
         padding: '1.5rem',
       },
       backgroundImage: {
-        home: 'linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, #09090A 90%);',
-        card: 'linear-gradient(90deg, #000, rgba(0,0,0,0.97), rgba(0,0,0,0.8), transparent, rgba(0,0,0,0.6));',
+        'gradient-title': 'linear-gradient(to right, #fc00ff, #00dbde)',
       },
       colors: {
         gray: {
@@ -24,4 +23,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
