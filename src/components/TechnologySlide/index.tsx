@@ -14,12 +14,12 @@ export function TechnologySlide() {
       grabCursor={true}
       a11y={{ enabled: false }}
       freeMode={true}
-      speed={11000}
+      speed={200 * 10}
       loop={true}
-      slidesPerView={16}
+      slidesPerView={12}
       modules={[Autoplay]}
       autoplay={{
-        delay: 0.5,
+        delay: 0,
         disableOnInteraction: false,
       }}
       breakpoints={{
