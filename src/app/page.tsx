@@ -1,6 +1,6 @@
 import { Button } from '@/components/Button'
+import { TechnologySlide } from '@/components/TechnologySlide'
 import { Code2 } from 'lucide-react'
-import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -43,6 +43,9 @@ export default function Home() {
                   &lt;/h1&gt;
                 </span>
               </div>
+            </div>
+            <div className="mt-20">
+              <TechnologySlide />
             </div>
           </div>
         </div>
@@ -106,7 +109,7 @@ export default function Home() {
         </div>
         <div className="relative h-full">
           <div className="sticky top-0 flex items-center">
-            <div className="container mx-auto w-full rounded-lg border-4 border-indigo-600 bg-gray-900 py-20">
+            <div className="container mx-auto w-full rounded-lg border-4 border-indigo-600 bg-[#0d1117] py-20 shadow-2xl transition-all hover:shadow-indigo-500/60">
               <div className="max-w-[45%] space-y-10">
                 <img
                   src="https://www.beeptheme.com.br/logo.svg"
