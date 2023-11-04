@@ -50,7 +50,10 @@ export default function Home() {
               <div className="w-[2px] bg-gray-200/40"></div>
               <Button variant="outline">Minhas informações de contato</Button>
             </div>
-            <div className="relative">
+            <div>
+              <TechnologySlide />
+            </div>
+            <div className="relative my-10">
               <span className="block text-4xl font-bold text-gray-400">
                 I&apos;m a <strong>Guilherme leoni</strong>
               </span>
@@ -66,7 +69,7 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div className="mt-20">
+            <div>
               <TechnologySlide />
             </div>
           </div>

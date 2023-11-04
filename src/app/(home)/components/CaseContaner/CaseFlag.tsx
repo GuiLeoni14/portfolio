@@ -9,9 +9,10 @@ interface CaseFlagProps {
   title: string
   subTitle: string
   color: string
+  message?: string
 }
 
-export function CaseFlag({ title, subTitle, color }: CaseFlagProps) {
+export function CaseFlag({ title, subTitle, color, message }: CaseFlagProps) {
   const { setActiveColor } = useContext(CaseContainerContext)
 
   const flagRef = useRef(null)
@@ -24,6 +25,18 @@ export function CaseFlag({ title, subTitle, color }: CaseFlagProps) {
   }, [isFLagInView, color, setActiveColor])
   return (
     <div className="container relative mx-auto flex items-center justify-between gap-20 py-40">
+      {message && (
+        <div className="absolute right-0 top-5 z-10 flex items-center gap-5">
+          <img
+            className="max-w-[60px] translate-y-5"
+            src="/img/icons/arrow.svg"
+            width={120}
+            height={100}
+            alt=""
+          />
+          <span>{message}</span>
+        </div>
+      )}
       <div className="ml-20 whitespace-nowrap">
         <motion.div
           className="relative flex h-96 flex-col justify-center pl-10"

@@ -42,7 +42,7 @@ export function CaseContainer() {
         <div className="container mx-auto flex">
           <div className="relative flex h-20 w-20 items-center justify-center">
             <Code2 className="h-10 w-10 text-white" />
-            <span className="bg-gradient-title absolute inset-0 h-full w-full rounded-full opacity-50 blur-lg"></span>
+            <span className="absolute inset-0 h-full w-full rounded-full bg-gradient-title opacity-50 blur-lg"></span>
           </div>
           {/* Cases - start */}
           <div className="ml-10 pt-5">
@@ -87,6 +87,7 @@ export function CaseContainer() {
           title="Beep digital - Base"
           subTitle="Uma plataforma para customização de temas!"
           color="#6366f1"
+          message="A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar à Terra."
         />
         <CaseContent
           title="Uma parceria com o Beep digital"
@@ -100,6 +101,7 @@ export function CaseContainer() {
           title="Beep theme - Base"
           subTitle="Uma plataforma para customização de temas!"
           color="#ec4899"
+          message="O universo é composto por aproximadamente 73% de energia escura."
         />
         <CaseContent
           title="Uma parceria com o Beep theme"
@@ -113,6 +115,7 @@ export function CaseContainer() {
           title="Dream bike"
           subTitle="Uma plataforma para customização de temas!"
           color="#ffffff"
+          message="Vênus tem uma atmosfera mortal com chuva de ácido."
         />
         <CaseContent
           title="Uma parceria com o Dream bike"

@@ -15,7 +15,7 @@ export function CaseLine() {
   }, [scrollYProgress])
 
   return (
-    <div className="container absolute left-1/2 top-0 mx-auto h-full -translate-x-1/2">
+    <div className="container pointer-events-none absolute left-1/2 top-0 mx-auto h-full -translate-x-1/2">
       <motion.div
         className={`ml-10 mt-24 w-1`}
         style={{
