@@ -1,30 +1,9 @@
 'use client'
 import { Button } from '@/components/Button'
 import { TechnologySlide } from '@/components/TechnologySlide'
-import { useScroll, motion, useInView } from 'framer-motion'
-import { Code2 } from 'lucide-react'
-import { useEffect, useState, useRef } from 'react'
 import { CaseContainer } from './components/CaseContaner'
 
 export default function Home() {
-  const { scrollYProgress } = useScroll()
-  const [heightLine, setHeightLine] = useState(0)
-  const [lineColor, setLineColor] = useState('bg-indigo-500')
-
-  const ref = useRef(null)
-  const isInView = useInView(ref)
-
-  useEffect(() => {
-    scrollYProgress.on('change', (latestValue) => {
-      setHeightLine(latestValue)
-    })
-  }, [scrollYProgress])
-
-  useEffect(() => {
-    if (isInView) {
-      setLineColor('bg-pink-500')
-    }
-  }, [isInView])
   return (
     <main>
       <div
@@ -40,7 +19,7 @@ export default function Home() {
               className="pointer-events-none absolute left-[3.25rem] top-0"
             />
             <h1 className="text-6xl font-semibold">
-              Vamos iniciar nossa jornada
+              Construindo a solução para seu problema
             </h1>
             <p className="mt-4 text-2xl text-gray-200">
               Antes de embarcar no foguete confira algumas instruções
@@ -50,6 +29,8 @@ export default function Home() {
               <div className="w-[2px] bg-gray-200/40"></div>
               <Button variant="outline">Minhas informações de contato</Button>
             </div>
+          </div>
+          <div className="relative z-10 pt-10">
             <div>
               <TechnologySlide />
             </div>

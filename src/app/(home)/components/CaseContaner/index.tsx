@@ -4,6 +4,8 @@ import { CaseContent } from './CaseContent'
 import { ReactNode, createContext, useState } from 'react'
 import { Code2 } from 'lucide-react'
 import { CaseLine } from './CaseLine'
+import { Button } from '@/components/Button'
+import { AccordionAbout } from '../AccordionAbout'
 
 interface CaseContainerContextData {
   activeColor: string
@@ -125,6 +127,25 @@ export function CaseContainer() {
           link="https://staage.com/"
           color="#ffffff"
         />
+      </div>
+      <div className="container mx-auto flex max-w-5xl flex-col py-40 font-bold">
+        <h2 className="text-center text-5xl">
+          Já entreguei{' '}
+          <strong className="bg-gradient-title bg-clip-text text-transparent">
+            soluções
+          </strong>{' '}
+          de outro planeta, e agora está na hora de entregar a sua
+        </h2>
+        <p className="mt-4 text-center text-2xl font-normal text-gray-200">
+          Convido você a embarcar em nossa emocionante jornada espacial, na qual
+          lançaremos um foguete em busca de concretizar sua visão, deixando para
+          trás o papel e tornando-a realidade.
+        </p>
+        <div className="mx-auto mt-20 flex h-fit gap-4">
+          <Button>Estou pronto, vamos nessa!</Button>
+          <div className="w-[2px] bg-gray-200/40"></div>
+          <Button variant="outline">Conferir informações do piloto</Button>
+        </div>
       </div>
     </CaseContainerContextProvider>
   )
