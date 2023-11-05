@@ -1,7 +1,9 @@
 'use client'
 import { Button } from '@/components/Button'
 import { TechnologySlide } from '@/components/TechnologySlide'
-import { CaseContainer } from './components/CaseContaner'
+import { CaseContainer } from './components/CaseContainer'
+import { DepositionsContainer } from './components/DepositionsContainer'
+import { TypeAnimation } from 'react-type-animation'
 
 export default function Home() {
   return (
@@ -19,10 +21,28 @@ export default function Home() {
               className="pointer-events-none absolute left-[3.25rem] top-0"
             />
             <h1 className="text-6xl font-semibold">
-              Construindo a solução para seu problema
+              Construindo a solução digital para{' '}
             </h1>
+            <TypeAnimation
+              className="relative bg-gradient-title bg-clip-text text-center text-6xl font-bold text-transparent after:absolute after:bottom-0 after:left-0
+              after:h-2 after:w-full after:bg-white"
+              sequence={[
+                'seu problema!',
+                2000,
+                'sua empresa!',
+                2000,
+                'seu negócio!',
+                2000,
+              ]}
+              wrapper="strong"
+              cursor={false}
+              repeat={Infinity}
+            />
             <p className="mt-4 text-2xl text-gray-200">
-              Antes de embarcar no foguete confira algumas instruções
+              Olá, seja bem-vindo! Meu nome é Guilherme dos Reis Leoni, e sou um
+              entusiasta de tecnologia e programação. Sou apaixonado por criar
+              soluções inovadoras e funcionais, e encontro grande satisfação no
+              aprimoramento constante das minhas habilidades técnicas.
             </p>
             <div className="my-20 flex h-fit gap-4">
               <Button>Meu currículo</Button>
@@ -57,6 +77,7 @@ export default function Home() {
         </div>
       </div>
       <CaseContainer />
+      <DepositionsContainer />
     </main>
   )
 }

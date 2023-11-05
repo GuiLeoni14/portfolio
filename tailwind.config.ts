@@ -8,6 +8,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-title': 'linear-gradient(to right, #fc00ff, #00dbde)',
+        stars: `url('/img/bgstars.webp')`,
       },
       colors: {
         gray: {

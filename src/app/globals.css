@@ -13,3 +13,11 @@ body {
 .technology-slide .swiper-wrapper{
   transition-timing-function: linear;
 }
+
+.deposition .swiper-pagination.swiper-pagination-progressbar{
+  @apply top-[initial] bottom-0
+}
+
+.deposition .swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  @apply bg-gradient-title
+}
