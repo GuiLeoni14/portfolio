@@ -26,7 +26,7 @@ export function CaseFlag({ title, subTitle, color, message }: CaseFlagProps) {
   return (
     <div className="container relative mx-auto flex items-center justify-between gap-20 py-40">
       {message && (
-        <div className="absolute right-0 top-5 z-10 flex items-center gap-5">
+        <div className="absolute right-0 top-5 z-10 flex items-center gap-5 text-sm lg:text-base">
           <img
             className="max-w-[60px] translate-y-5"
             src="/img/icons/arrow.svg"

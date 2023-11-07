@@ -17,7 +17,7 @@ export function CaseLine() {
   return (
     <div className="container pointer-events-none absolute left-1/2 top-0 mx-auto h-full -translate-x-1/2">
       <motion.div
-        className={`ml-10 mt-24 w-1`}
+        className={`ml-5 mt-24 w-1 lg:ml-10`}
         style={{
           height: `calc(${heightLine * 100}% - 5%)`,
           backgroundColor: activeColor,

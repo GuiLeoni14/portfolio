@@ -24,15 +24,11 @@ export function TechnologySlide() {
       }}
       breakpoints={{
         0: {
-          spaceBetween: 30,
-        },
-        480: {
-          spaceBetween: 30,
-        },
-        767: {
+          slidesPerView: 6,
           spaceBetween: 40,
         },
-        992: {
+        1024: {
+          slidesPerView: 12,
           spaceBetween: 40,
         },
       }}

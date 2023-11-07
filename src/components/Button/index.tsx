@@ -4,7 +4,7 @@ import { ButtonHTMLAttributes } from 'react'
 
 const button = tv({
   base: [
-    'rounded-lg px-4 py-3 text-sm font-semibold outline-none shadow-sm text-lg transition-all',
+    'rounded-lg px-4 py-3 text-sm font-semibold outline-none shadow-sm text-base lg:text-lg transition-all',
     'focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-violet-500',
     'active:opacity-80',
   ],

@@ -48,22 +48,22 @@ export function CaseContainer() {
           </div>
           {/* Cases - start */}
           <div className="ml-10 pt-5">
-            <div className="flex justify-between">
-              <h2 className="w-full text-6xl font-bold text-gray-100">
+            <div className="flex flex-col justify-between lg:flex-row">
+              <h2 className="w-full text-4xl font-bold text-gray-100 lg:text-6xl">
                 Meus{' '}
                 <strong className="bg-gradient-title bg-clip-text text-transparent">
                   cases
                 </strong>
               </h2>
-              <div className="flex w-full items-end gap-4">
+              <div className="mt-4 flex w-full flex-col-reverse lg:mt-0 lg:flex-row lg:items-end lg:gap-4">
                 <img
-                  className="translate-y-4"
+                  className="max-w-[60px] translate-y-4 lg:max-w-[initial]"
                   src="/img/icons/arrow.svg"
                   width={120}
                   height={100}
                   alt=""
                 />
-                <span className="block text-2xl font-medium text-gray-300">
+                <span className="block text-lg font-medium text-gray-300 lg:text-2xl">
                   As melhores tecnologia aliadas as melhores práticas constroem
                   soluções de outro planeta!
                 </span>
