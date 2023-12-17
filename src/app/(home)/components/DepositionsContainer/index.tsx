@@ -19,6 +19,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import 'swiper/css/thumbs'
+import { Swiper as SwiperType } from 'swiper'
 
 const slideItems = [
   {
@@ -72,7 +73,7 @@ const slideItems = [
 ] satisfies SlideCardProps[]
 
 export function DepositionsContainer() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null)
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null)
 
   return (
     <div className="deposition relative h-auto w-full bg-stars bg-cover bg-center pt-20 md:pt-40">

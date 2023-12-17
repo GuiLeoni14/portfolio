@@ -136,8 +136,8 @@ export function CaseContainer() {
           </strong>{' '}
           de outro planeta
         </h2>
-        <span className="mt-2 inline-block rounded-full bg-gradient-title p-2 text-white">
-          e agora está na hora de entregar a sua
+        <span className="mx-auto mt-4 inline-block w-fit rounded-full bg-gradient-title p-2 text-white md:text-2xl">
+          E agora está na hora de entregar a sua
         </span>
         <p className="mt-4 text-center text-lg font-normal text-gray-200 md:text-2xl">
           Convido você a embarcar em nossa emocionante jornada espacial, na qual
