@@ -75,12 +75,12 @@ export function DepositionsContainer() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
 
   return (
-    <div className="bg-stars deposition relative h-auto w-full bg-cover bg-center">
+    <div className="deposition relative h-auto w-full bg-stars bg-cover bg-center pt-20 md:pt-40">
       <div className="container mx-auto mb-10 flex flex-col items-center gap-4 text-center">
         <span className="text-2xl text-gray-200">
           Ainda não está convencido?
         </span>
-        <h2 className="text-center text-5xl font-bold">
+        <h2 className="text-center text-4xl font-bold md:text-5xl">
           Veja oque falam sobre{' '}
           <strong className="bg-gradient-title bg-clip-text text-transparent">
             mim

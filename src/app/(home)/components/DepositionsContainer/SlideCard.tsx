@@ -24,7 +24,7 @@ export function SlideCard({
 }: SlideCardProps) {
   return (
     <div className="relative h-full w-full">
-      <div className="container relative z-20 mx-auto flex flex-col justify-between gap-10 py-20 lg:flex-row">
+      <div className="container relative z-20 mx-auto flex flex-col justify-between gap-10 py-10 md:py-20 lg:flex-row">
         <div className="flex w-full flex-col items-start lg:ml-[200px]">
           <h3
             className={`anime_title text-3xl font-bold text-white md:text-6xl`}

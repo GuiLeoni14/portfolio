@@ -4,6 +4,7 @@ import { TechnologySlide } from '@/components/TechnologySlide'
 import { CaseContainer } from './components/CaseContainer'
 import { DepositionsContainer } from './components/DepositionsContainer'
 import { TypeAnimation } from 'react-type-animation'
+import { ServiceContainer } from './components/ServiceContainer'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
           backgroundImage: `url('https://github.githubassets.com/images/modules/site/home-campaign/hero-bg.webp')`,
         }}
       >
-        <div className="container relative mx-auto pt-72">
+        <div className="container relative mx-auto pb-20 pt-72 md:pb-40">
           <div className="lg:ml-[7.5rem]">
             <img
               src="/img/icons/lines-hero.svg"
@@ -44,7 +45,7 @@ export default function Home() {
               soluções inovadoras e funcionais, e encontro grande satisfação no
               aprimoramento constante das minhas habilidades técnicas.
             </p>
-            <div className="my-10 flex h-fit gap-4 lg:my-20">
+            <div className="my-10 flex h-fit flex-col gap-2 md:flex-row md:gap-4 lg:my-20">
               <Button>Meu currículo</Button>
               <div className="w-[2px] bg-gray-200/40"></div>
               <Button variant="outline">Minhas informações de contato</Button>
@@ -76,6 +77,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ServiceContainer />
       <CaseContainer />
       <DepositionsContainer />
     </main>

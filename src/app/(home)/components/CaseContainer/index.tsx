@@ -42,12 +42,12 @@ export function CaseContainer() {
       <div className="relative h-full overflow-hidden">
         <CaseLine />
         <div className="container mx-auto flex">
-          <div className="relative flex h-20 w-20 items-center justify-center">
+          <div className="relative hidden h-20 w-20 items-center justify-center md:flex">
             <Code2 className="h-10 w-10 text-white" />
             <span className="absolute inset-0 h-full w-full rounded-full bg-gradient-title opacity-50 blur-lg"></span>
           </div>
           {/* Cases - start */}
-          <div className="ml-10 pt-5">
+          <div className="pt-10 md:ml-10">
             <div className="flex flex-col justify-between lg:flex-row">
               <h2 className="w-full text-4xl font-bold text-gray-100 lg:text-6xl">
                 Meus{' '}
@@ -128,20 +128,23 @@ export function CaseContainer() {
           color="#ffffff"
         />
       </div>
-      <div className="container mx-auto flex max-w-5xl flex-col py-40 font-bold">
-        <h2 className="text-center text-5xl">
+      <div className="container mx-auto flex max-w-5xl flex-col py-20 font-bold md:py-40">
+        <h2 className="text-center text-4xl md:text-5xl">
           Já entreguei{' '}
           <strong className="bg-gradient-title bg-clip-text text-transparent">
             soluções
           </strong>{' '}
-          de outro planeta, e agora está na hora de entregar a sua
+          de outro planeta
         </h2>
-        <p className="mt-4 text-center text-2xl font-normal text-gray-200">
+        <span className="mt-2 inline-block rounded-full bg-gradient-title p-2 text-white">
+          e agora está na hora de entregar a sua
+        </span>
+        <p className="mt-4 text-center text-lg font-normal text-gray-200 md:text-2xl">
           Convido você a embarcar em nossa emocionante jornada espacial, na qual
           lançaremos um foguete em busca de concretizar sua visão, deixando para
           trás o papel e tornando-a realidade.
         </p>
-        <div className="mx-auto mt-20 flex h-fit gap-4">
+        <div className="mx-auto mt-10 flex h-fit flex-col gap-2 md:mt-20 md:flex-row md:gap-4">
           <Button>Estou pronto, vamos nessa!</Button>
           <div className="w-[2px] bg-gray-200/40"></div>
           <Button variant="outline">Conferir informações do piloto</Button>

@@ -24,7 +24,7 @@ export function CaseFlag({ title, subTitle, color, message }: CaseFlagProps) {
     }
   }, [isFLagInView, color, setActiveColor])
   return (
-    <div className="container relative mx-auto flex items-center justify-between gap-20 py-40">
+    <div className="container relative mx-auto flex flex-col items-center justify-between gap-10 py-20 md:flex-row md:gap-20 md:py-40">
       {message && (
         <div className="absolute right-0 top-5 z-10 flex items-center gap-5 text-sm lg:text-base">
           <img
@@ -37,7 +37,7 @@ export function CaseFlag({ title, subTitle, color, message }: CaseFlagProps) {
           <span>{message}</span>
         </div>
       )}
-      <div className="ml-20 whitespace-nowrap">
+      <div className="md:ml-20 md:whitespace-nowrap">
         <motion.div
           className="relative flex h-96 flex-col justify-center pl-10"
           initial={{ opacity: 0 }}
@@ -46,14 +46,16 @@ export function CaseFlag({ title, subTitle, color, message }: CaseFlagProps) {
           ref={flagRef}
         >
           <strong
-            className={`text-6xl font-semibold`}
+            className={`text-4xl font-semibold md:text-6xl`}
             style={{
               color,
             }}
           >
             {title}
           </strong>
-          <span className="mt-2 text-2xl text-gray-200">{subTitle}</span>
+          <span className="mt-2 text-xl text-gray-200 md:text-2xl">
+            {subTitle}
+          </span>
           <GradientArrow />
         </motion.div>
       </div>
