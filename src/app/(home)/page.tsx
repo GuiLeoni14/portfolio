@@ -40,10 +40,12 @@ export default function Home() {
               repeat={Infinity}
             />
             <p className="mt-4 text-base text-gray-200 lg:text-2xl">
-              Olá, seja bem-vindo! Meu nome é Guilherme dos Reis Leoni, e sou um
-              entusiasta de tecnologia e programação. Sou apaixonado por criar
-              soluções inovadoras e funcionais, e encontro grande satisfação no
-              aprimoramento constante das minhas habilidades técnicas.
+              Olá! Sou Guilherme dos Reis Leoni, especializado em criar soluções
+              web personalizadas, desde landing pages envolventes até e-commerce
+              eficientes. Minha paixão pela tecnologia e inovação impulsiona
+              resultados excepcionais para elevar a presença online do seu
+              negócio. Vamos transformar suas ideias em realidade e destacar sua
+              marca no mundo digital. Entre em contato e vamos começar!
             </p>
             <div className="my-10 flex h-fit flex-col gap-2 md:flex-row md:gap-4 lg:my-20">
               <Button>Meu currículo</Button>
