@@ -79,6 +79,10 @@
   @apply text-gray-100
 }
 
+img {
+  @apply max-w-full
+}
+
 body {
   @apply bg-blue-900 h-full
 }
