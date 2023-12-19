@@ -12,7 +12,7 @@ import {
 
 export default async function LpServicePage() {
   return (
-    <main>
+    <main className="pt-[80px]">
       <section className="container mx-auto flex gap-10 py-20">
         <div className="w-full max-w-[600px]">
           <span className="inline-block rounded-full bg-gradient-title p-2 text-white">

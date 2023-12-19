@@ -8,7 +8,7 @@ import { ServiceContainer } from './components/ServiceContainer'
 
 export default function Home() {
   return (
-    <main>
+    <main className="pt-[80px]">
       <div
         className="w-full bg-cover bg-center bg-no-repeat"
         style={{
