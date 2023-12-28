@@ -65,7 +65,6 @@ export function CardHover({ className, children }: CardHoverProps) {
         style={{
           width: '100%',
           height: '100%',
-          borderRadius: '10px',
           backfaceVisibility: 'hidden',
           boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
           transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,

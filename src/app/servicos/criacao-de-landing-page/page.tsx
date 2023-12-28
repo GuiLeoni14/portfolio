@@ -1,14 +1,9 @@
 import { Button } from '@/components/Button'
 import { CallToAction } from '@/components/CallToAction'
 import { CardHover } from '@/components/CardHover'
+import { ProcessCards } from '@/components/ProcessCards'
 import { TechnologySlide } from '@/components/TechnologySlide'
-import {
-  Chrome,
-  LayoutTemplate,
-  PackageOpen,
-  PaintBucket,
-  TrendingUp,
-} from 'lucide-react'
+import { Chrome, LayoutTemplate } from 'lucide-react'
 
 export default async function LpServicePage() {
   return (
@@ -57,52 +52,8 @@ export default async function LpServicePage() {
           <h2 className="mt-2 text-center text-2xl font-bold md:text-4xl">
             Entenda o que engloba o processo de criação de uma landing page
           </h2>
-          <div className="mt-16 grid grid-cols-3 gap-8">
-            <div className="flex h-full flex-col items-start justify-center rounded-md bg-gray-700 p-8">
-              <div className="flex h-[60px] w-[60px] items-center justify-center rounded-md border border-gray-200 bg-gray-700 shadow-2xl">
-                <TrendingUp />
-              </div>
-              <strong className="mt-8 text-4xl font-bold">
-                <span className="bg-gradient-title bg-clip-text text-transparent">
-                  01.
-                </span>{' '}
-                Start
-              </strong>
-              <p className="mt-4 text-base">
-                Entendemos as suas demandas e o fluxo de telas, para montar um
-                projeto personalizado.
-              </p>
-            </div>
-            <div className="flex h-full flex-col items-start justify-center bg-gray-700 p-8">
-              <div className="flex h-[60px] w-[60px] items-center justify-center rounded-md border border-gray-200 bg-gray-700 shadow-2xl">
-                <PaintBucket />
-              </div>
-              <strong className="mt-8 text-4xl font-bold">
-                <span className="bg-gradient-title bg-clip-text text-transparent">
-                  02.
-                </span>{' '}
-                Design
-              </strong>
-              <p className="mt-4 text-base">
-                Desenvolvemos o layout de telas focadas na usabilidade e em
-                atender às suas demandas.
-              </p>
-            </div>
-            <div className="flex h-full flex-col items-start justify-center bg-gray-700 p-8">
-              <div className="flex h-[60px] w-[60px] items-center justify-center rounded-md border border-gray-200 bg-gray-700 shadow-2xl">
-                <PackageOpen />
-              </div>
-              <strong className="mt-8 text-4xl font-bold">
-                <span className="bg-gradient-title bg-clip-text text-transparent">
-                  03.
-                </span>{' '}
-                Entrega
-              </strong>
-              <p className="mt-4 text-base">
-                Evoluímos e estamos disponíveis para sempre atualizar seu
-                projeto.
-              </p>
-            </div>
+          <div className="mt-16">
+            <ProcessCards />
           </div>
           <div className="flex gap-8 pt-40">
             <CardHover className="w-full max-w-[348px]">
