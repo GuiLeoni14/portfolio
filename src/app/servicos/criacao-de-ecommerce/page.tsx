@@ -75,7 +75,14 @@ export default function EcServicePage() {
           personalização e tecnologia de ponta para garantir o sucesso do seu
           comércio eletrônico.
         </p>
-        <Button className="mt-8">Solicitar orçamento</Button>
+        <a
+          href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-block"
+        >
+          <Button>Solicitar orçamento</Button>
+        </a>
         <div className="mt-10">
           <CardHover>
             <img

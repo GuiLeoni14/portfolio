@@ -5,6 +5,7 @@ import { ServiceContainer } from './components/ServiceContainer'
 import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { Metadata } from 'next'
 import { TitleAnimation } from './components/TitleAnimation'
+import { CallToAction } from '@/components/CallToAction'
 
 export const metadata: Metadata = {
   title: 'Página Inicial',
@@ -39,10 +40,22 @@ export default function Home() {
               negócio. Vamos transformar suas ideias em realidade e destacar sua
               marca no mundo digital. Entre em contato e vamos começar!
             </p>
-            <div className="my-10 flex h-fit flex-col gap-2 md:flex-row md:gap-4 lg:my-20">
-              <Button>Meu currículo</Button>
+            <div className="my-10 flex h-fit flex-col gap-2 md:flex-row md:gap-4">
+              <Button asChild>
+                <a href="/cv.pdf" download="cv.pdf">
+                  Meu currículo
+                </a>
+              </Button>
               <div className="w-[2px] bg-gray-200/40"></div>
-              <Button variant="outline">Minhas informações de contato</Button>
+              <a
+                href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline">
+                  Entre em contato comigo, vamos nessa!
+                </Button>
+              </a>
             </div>
           </div>
           <div className="relative z-10 pt-10">
@@ -73,6 +86,9 @@ export default function Home() {
       </div>
       <ServiceContainer />
       <CaseContainer />
+      <div className="container px-20 md:py-40">
+        <CallToAction />
+      </div>
       <DepositionsContainer />
     </main>
   )

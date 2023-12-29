@@ -59,7 +59,7 @@ const contacts = [
   {
     icon: <Phone />,
     text: '+35 999979041',
-    href: '/',
+    href: 'https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0',
     title: 'WhatsApp',
   },
   {
@@ -71,13 +71,13 @@ const contacts = [
   {
     icon: <Linkedin />,
     text: 'Guilherme Leoni',
-    href: '#',
+    href: 'https://www.linkedin.com/in/guileoni14',
     title: 'Linkedin',
   },
   {
     icon: <Github />,
     text: 'GuiLeoni14',
-    href: '#',
+    href: 'https://github.com/GuiLeoni14',
     title: 'Github',
   },
 ]
@@ -160,7 +160,14 @@ export function Header() {
                 <Link href="/" className="block py-2 text-xl font-semibold">
                   Sobre
                 </Link>
-                <Button className="mt-4">Solicitar orçamento</Button>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block"
+                >
+                  <Button>Solicitar orçamento</Button>
+                </a>
               </ScrollArea>
             </CollapsibleContent>
           </Collapsible>
@@ -277,7 +284,14 @@ export function Header() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Button className="hidden lg:block">Solicitar orçamento</Button>
+        <a
+          href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden lg:block"
+        >
+          <Button>Solicitar orçamento</Button>
+        </a>
       </div>
     </header>
   )

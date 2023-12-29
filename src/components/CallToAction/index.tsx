@@ -19,9 +19,19 @@ export function CallToAction() {
         trás o papel e tornando-a realidade.
       </p>
       <div className="mx-auto mt-10 flex h-fit flex-col gap-2 md:mt-20 md:flex-row md:gap-4">
-        <Button>Estou pronto, vamos nessa!</Button>
+        <a
+          href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button>Estou pronto, vamos nessa!</Button>
+        </a>
         <div className="w-[2px] bg-gray-200/40"></div>
-        <Button variant="outline">Conferir informações do piloto</Button>
+        <Button variant="outline">
+          <a href="/cv.pdf" download="cv.pdf">
+            Conferir informações do piloto
+          </a>
+        </Button>
       </div>
     </div>
   )

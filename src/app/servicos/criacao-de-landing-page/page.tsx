@@ -69,7 +69,14 @@ export default async function LpServicePage() {
             empresa e o consumidor é um diferencial necessário para destacar-se
             no mercado.
           </p>
-          <Button className="mt-8">Solicitar orçamento</Button>
+          <a
+            href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block"
+          >
+            <Button>Solicitar orçamento</Button>
+          </a>
           <div className="relative mt-10">
             <TechnologySlide />
             <div className="mt-2 flex items-center gap-5 text-sm lg:text-base">

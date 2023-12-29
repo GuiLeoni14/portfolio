@@ -20,9 +20,15 @@ export function ServiceContainer() {
             Trabalho com uma linha de criação e estratégia adaptada para o
             perfil de cada cliente.
           </p>
-          <Button variant="primary" className="mt-8">
-            Solicitar orçamento
-          </Button>
+
+          <a
+            href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block"
+          >
+            <Button variant="primary">Solicitar orçamento</Button>
+          </a>
         </div>
         <div className="grid flex-1 grid-cols-1 gap-4 md:grid-cols-2">
           <Link
