@@ -1,9 +1,10 @@
 import { Button } from '@/components/Button'
 import { CallToAction } from '@/components/CallToAction'
 import { CardHover } from '@/components/CardHover'
-import { Case, CaseContainer } from '@/components/CaseContainer'
+import { CaseContainer } from '@/components/CaseContainer'
 import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { ProcessCards } from '@/components/ProcessCards'
+import { fetchCases } from '@/hooks/fetch/useCases'
 import { Metadata } from 'next'
 
 const platforms = [
@@ -29,33 +30,24 @@ const platforms = [
   },
 ]
 
-const cases: Case[] = [
-  {
-    caseFlag: {
-      title: 'Café Belmiros',
-      color: 'yellow',
-      subTitle: 'Site institucional, blog e muito mais',
-    },
-    caseContent: {
-      title: 'Uma parceria com o Café Belmiros',
-      description:
-        'Trabalhamos no design e front-end do site e plataforma e criamos a interface do app, somando forças com o time do Grupo Primo para lançar a Plataforma Staage.',
-      logo: 'https://insany.design/wp-content/uploads/2021/08/finclass.svg',
-      thumbnail:
-        'https://insany.design/wp-content/uploads/2021/08/finclass-02.jpg',
-      link: 'https://staage.com/',
-      color: 'yellow',
-    },
-  },
-]
-
 export const metadata: Metadata = {
   title: 'Criação de ecommerce',
   description:
     'Transforme meu negócio digital com meu serviço especializado em criação de e-commerce. Desenvolvo plataformas personalizadas, intuitivas e seguras, proporcionando aos meus clientes uma experiência de compra única. Vamos juntos construir uma loja virtual de sucesso para impulsionar suas vendas online. Estou pronto para transformar sua visão em realidade digital!',
 }
 
-export default function EcServicePage() {
+export default async function EcServicePage() {
+  const cases = await fetchCases({
+    variables: {
+      last: 4,
+      where: {
+        tags_every: {
+          slug: 'ecommerce',
+        },
+      },
+    },
+  })
+
   return (
     <main className="pt-[80px]">
       <section className="container mx-auto flex flex-col items-center py-20 text-center">

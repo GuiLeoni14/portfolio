@@ -35,6 +35,10 @@ fragment case on Case{
   }
   createdAt
   updatedAt
+  link
+  color {
+    hex
+  }
   tags{
     ...tag
   }

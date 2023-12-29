@@ -1,12 +1,9 @@
-import { useContext } from 'react'
-import { CaseContainerContext } from '.'
-
 interface CaseContentProps {
   title: string
   description: string
   logo: string
   thumbnail: string
-  link: string
+  link?: string | null
   color: string
 }
 
@@ -38,16 +35,18 @@ export function CaseContent({
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
               src={thumbnail}
             />
-            <div className="absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-black/60 opacity-0 transition-all duration-300 group-hover:opacity-100">
-              <a
-                className="rounded-full bg-gradient-title p-2"
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visualizar projeto
-              </a>
-            </div>
+            {link && (
+              <div className="absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-black/60 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <a
+                  className="rounded-full bg-gradient-title p-2"
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visualizar projeto
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

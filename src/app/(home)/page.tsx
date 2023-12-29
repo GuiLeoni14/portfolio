@@ -67,13 +67,13 @@ export default function Home() {
                 I&apos;m a <strong>Guilherme leoni</strong>
               </span>
               <div className="mt-4 flex w-full max-w-[442px]">
-                <span className="font-belle self-start text-4xl text-gray-50">
+                <span className="self-start font-belle text-4xl text-gray-50">
                   &lt;h1&gt;
                 </span>
                 <span className="bg-gradient-title bg-clip-text text-center text-4xl font-bold text-transparent lg:text-6xl">
                   Full-stack <strong className="text-gray-50">Developer</strong>
                 </span>
-                <span className="font-belle self-end text-4xl text-gray-50">
+                <span className="self-end font-belle text-4xl text-gray-50">
                   &lt;/h1&gt;
                 </span>
               </div>

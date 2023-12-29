@@ -3,6 +3,7 @@ import { CaseFlag } from './CaseFlag'
 import { CaseContent } from './CaseContent'
 import { ReactNode, createContext, useState } from 'react'
 import { CaseLine } from './CaseLine'
+import { CaseFragment } from '@/graphql/generated'
 
 interface CaseContainerContextData {
   activeColor: string
@@ -49,7 +50,7 @@ export type Case = {
   }
 }
 interface CaseContainerProps {
-  cases: Case[]
+  cases: CaseFragment[]
 }
 
 export function CaseContainer({ cases }: CaseContainerProps) {
@@ -59,19 +60,19 @@ export function CaseContainer({ cases }: CaseContainerProps) {
         <CaseLine />
         {cases.map((job) => {
           return (
-            <div key={job.caseContent.title}>
+            <div key={job.slug}>
               <CaseFlag
-                title={job.caseFlag.title}
-                subTitle={job.caseFlag.subTitle}
-                color={job.caseFlag.color}
+                title={job.name}
+                subTitle={job.resume}
+                color={job.color.hex}
               />
               <CaseContent
-                title={job.caseContent.title}
-                description={job.caseContent.description}
-                logo={job.caseContent.logo}
-                thumbnail={job.caseContent.thumbnail}
-                link={job.caseContent.link}
-                color={job.caseContent.color}
+                title={job.title}
+                description={job.description}
+                logo={job.logo.url}
+                thumbnail={job.cover.url}
+                link={job.link}
+                color={job.color.hex}
               />
             </div>
           )

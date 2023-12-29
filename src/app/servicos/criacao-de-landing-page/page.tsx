@@ -1,47 +1,13 @@
 import { Button } from '@/components/Button'
 import { CallToAction } from '@/components/CallToAction'
 import { CardHover } from '@/components/CardHover'
-import { Case, CaseContainer } from '@/components/CaseContainer'
+import { CaseContainer } from '@/components/CaseContainer'
 import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { ProcessCards } from '@/components/ProcessCards'
 import { TechnologySlide } from '@/components/TechnologySlide'
+import { fetchCases } from '@/hooks/fetch/useCases'
 import { Chrome, LayoutTemplate } from 'lucide-react'
 import { Metadata } from 'next'
-
-const cases: Case[] = [
-  {
-    caseFlag: {
-      title: 'Banco Neon',
-      color: '#00c3ff',
-      subTitle: 'Landing page, responsividade e muito mais',
-    },
-    caseContent: {
-      title: 'Banco Neon',
-      description:
-        'Criei uma landing page irada para a empresa Neon como parte do meu projeto de estudos. Mergulhei de cabeça no design, buscando uma estética chamativa e uma experiência do usuário de primeira. Foi incrível colocar em prática o que venho aprendendo. Dê uma olhada na minha criação para a Neon e me conte o que achou!',
-      logo: '/img/projects/logo_neon.png',
-      thumbnail: '/img/projects/neon.png',
-      link: 'https://staage.com/',
-      color: '#00c3ff',
-    },
-  },
-  {
-    caseFlag: {
-      title: 'Baiuca',
-      color: '#ff8800',
-      subTitle: 'Landing page, site institucional e muito mais',
-    },
-    caseContent: {
-      title: 'Baiuca Móveis Rústicos',
-      description:
-        'Com muito entusiasmo, contribuí para a criação da landing page e do site institucional da Baiuca Móveis Rústicos. Focamos no design para capturar toda a autenticidade e beleza dos móveis, criando uma experiência única. Explore a landing page e o site para sentir a essência acolhedora da Baiuca.',
-      logo: '/img/projects/logo_baiuca.png',
-      thumbnail: '/img/projects/baiuca.png',
-      link: 'https://staage.com/',
-      color: '#ff8800',
-    },
-  },
-]
 
 export const metadata: Metadata = {
   title: 'Criação de landing pages',
@@ -50,6 +16,17 @@ export const metadata: Metadata = {
 }
 
 export default async function LpServicePage() {
+  const cases = await fetchCases({
+    variables: {
+      last: 4,
+      where: {
+        tags_every: {
+          slug: 'landing-page',
+        },
+      },
+    },
+  })
+
   return (
     <main className="pt-[80px]">
       <section className="container mx-auto flex gap-10 py-20">

@@ -761,6 +761,7 @@ export type BatchPayload = {
 
 export type Case = Entity & Node & {
   __typename?: 'Case';
+  color: Color;
   content: RichText;
   cover: Asset;
   /** The time the document was created */
@@ -774,6 +775,7 @@ export type Case = Entity & Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID']['output'];
+  link?: Maybe<Scalars['String']['output']>;
   logo: Asset;
   name: Scalars['String']['output'];
   /** The time the document was published. Null on documents in draft stage. */
@@ -887,10 +889,12 @@ export type CaseConnection = {
 };
 
 export type CaseCreateInput = {
+  color: ColorInput;
   content: Scalars['RichTextAST']['input'];
   cover: AssetCreateOneInlineInput;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   description: Scalars['String']['input'];
+  link?: InputMaybe<Scalars['String']['input']>;
   logo: AssetCreateOneInlineInput;
   name: Scalars['String']['input'];
   resume: Scalars['String']['input'];
@@ -992,6 +996,25 @@ export type CaseManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  link_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  link_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  link_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  link_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  link_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  link_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  link_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  link_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  link_starts_with?: InputMaybe<Scalars['String']['input']>;
   logo?: InputMaybe<AssetWhereInput>;
   name?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
@@ -1117,6 +1140,8 @@ export enum CaseOrderByInput {
   DescriptionDesc = 'description_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  LinkAsc = 'link_ASC',
+  LinkDesc = 'link_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
@@ -1132,9 +1157,11 @@ export enum CaseOrderByInput {
 }
 
 export type CaseUpdateInput = {
+  color?: InputMaybe<ColorInput>;
   content?: InputMaybe<Scalars['RichTextAST']['input']>;
   cover?: InputMaybe<AssetUpdateOneInlineInput>;
   description?: InputMaybe<Scalars['String']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
   logo?: InputMaybe<AssetUpdateOneInlineInput>;
   name?: InputMaybe<Scalars['String']['input']>;
   resume?: InputMaybe<Scalars['String']['input']>;
@@ -1162,8 +1189,10 @@ export type CaseUpdateManyInlineInput = {
 };
 
 export type CaseUpdateManyInput = {
+  color?: InputMaybe<ColorInput>;
   content?: InputMaybe<Scalars['RichTextAST']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   resume?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
@@ -1286,6 +1315,25 @@ export type CaseWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  link_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  link_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  link_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  link_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  link_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  link_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  link_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  link_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  link_starts_with?: InputMaybe<Scalars['String']['input']>;
   logo?: InputMaybe<AssetWhereInput>;
   name?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
@@ -4945,7 +4993,7 @@ export type SeoFragment = { __typename?: 'Seo', title: string, description: stri
 
 export type TagFragment = { __typename?: 'Tag', name: string, slug: string, createdAt: any, updatedAt: any, icon?: { __typename?: 'Asset', url: string } | null, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null };
 
-export type CaseFragment = { __typename?: 'Case', name: string, title: string, slug: string, description: string, resume: string, createdAt: any, updatedAt: any, logo: { __typename?: 'Asset', url: string }, cover: { __typename?: 'Asset', url: string }, content: { __typename?: 'RichText', html: string, text: string }, tags: Array<{ __typename?: 'Tag', name: string, slug: string, createdAt: any, updatedAt: any, icon?: { __typename?: 'Asset', url: string } | null, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null }>, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null };
+export type CaseFragment = { __typename?: 'Case', name: string, title: string, slug: string, description: string, resume: string, createdAt: any, updatedAt: any, link?: string | null, logo: { __typename?: 'Asset', url: string }, cover: { __typename?: 'Asset', url: string }, content: { __typename?: 'RichText', html: string, text: string }, color: { __typename?: 'Color', hex: any }, tags: Array<{ __typename?: 'Tag', name: string, slug: string, createdAt: any, updatedAt: any, icon?: { __typename?: 'Asset', url: string } | null, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null }>, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null };
 
 export type GetCasesQueryVariables = Exact<{
   where?: InputMaybe<CaseWhereInput>;
@@ -4958,7 +5006,7 @@ export type GetCasesQueryVariables = Exact<{
 }>;
 
 
-export type GetCasesQuery = { __typename?: 'Query', cases: Array<{ __typename?: 'Case', name: string, title: string, slug: string, description: string, resume: string, createdAt: any, updatedAt: any, logo: { __typename?: 'Asset', url: string }, cover: { __typename?: 'Asset', url: string }, content: { __typename?: 'RichText', html: string, text: string }, tags: Array<{ __typename?: 'Tag', name: string, slug: string, createdAt: any, updatedAt: any, icon?: { __typename?: 'Asset', url: string } | null, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null }>, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null }> };
+export type GetCasesQuery = { __typename?: 'Query', cases: Array<{ __typename?: 'Case', name: string, title: string, slug: string, description: string, resume: string, createdAt: any, updatedAt: any, link?: string | null, logo: { __typename?: 'Asset', url: string }, cover: { __typename?: 'Asset', url: string }, content: { __typename?: 'RichText', html: string, text: string }, color: { __typename?: 'Color', hex: any }, tags: Array<{ __typename?: 'Tag', name: string, slug: string, createdAt: any, updatedAt: any, icon?: { __typename?: 'Asset', url: string } | null, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null }>, seo?: { __typename?: 'Seo', title: string, description: string, keywords?: string | null } | null }> };
 
 export type GetTagsQueryVariables = Exact<{
   where?: InputMaybe<TagWhereInput>;

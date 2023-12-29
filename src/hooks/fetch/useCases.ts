@@ -49,6 +49,10 @@ export const getCaseQueryDocument = gql`
     tags {
       ...tag
     }
+    link
+    color {
+      hex
+    }
     seo {
       ...seo
     }

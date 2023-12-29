@@ -4,8 +4,6 @@ import { CaseContent } from './CaseContent'
 import { ReactNode, createContext, useState } from 'react'
 import { Code2 } from 'lucide-react'
 import { CaseLine } from './CaseLine'
-import { Button } from '@/components/Button'
-import { AccordionAbout } from '../AccordionAbout'
 
 interface CaseContainerContextData {
   activeColor: string
