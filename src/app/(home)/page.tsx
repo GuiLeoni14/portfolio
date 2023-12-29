@@ -86,7 +86,7 @@ export default function Home() {
       </div>
       <ServiceContainer />
       <CaseContainer />
-      <div className="container px-20 md:py-40">
+      <div className="container py-20 md:py-40">
         <CallToAction />
       </div>
       <DepositionsContainer />

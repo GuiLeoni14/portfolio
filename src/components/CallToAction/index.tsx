@@ -23,15 +23,16 @@ export function CallToAction() {
           href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
           target="_blank"
           rel="noopener noreferrer"
+          className="block w-full md:w-fit"
         >
-          <Button>Estou pronto, vamos nessa!</Button>
+          <Button className="w-full">Estou pronto, vamos nessa!</Button>
         </a>
         <div className="w-[2px] bg-gray-200/40"></div>
-        <Button variant="outline">
-          <a href="/cv.pdf" download="cv.pdf">
+        <a href="/cv.pdf" download="cv.pdf" className="block w-full md:w-fit">
+          <Button variant="outline" className="w-full">
             Conferir informações do piloto
-          </a>
-        </Button>
+          </Button>
+        </a>
       </div>
     </div>
   )
