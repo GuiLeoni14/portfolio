@@ -1,0 +1,44 @@
+fragment seo on Seo {
+  title
+  description
+  keywords
+}
+
+fragment tag on Tag {
+  name
+  slug
+  icon{
+    url
+  }
+  createdAt
+  updatedAt
+  seo{
+    ...seo
+  }
+}
+
+fragment case on Case{
+  name
+  title
+  slug
+  description
+  resume
+  logo{
+    url
+  }
+  cover{
+    url
+  }
+  content{
+    html
+    text
+  }
+  createdAt
+  updatedAt
+  tags{
+    ...tag
+  }
+  seo{
+    ...seo
+  }
+}

@@ -4,6 +4,7 @@ import { Inter, La_Belle_Aurore } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/layout/Header'
 import { ThemeProvider } from '@/components/theme-provider'
+import { RootProviders } from './providers'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -26,18 +27,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt" className={`${inter.variable} ${belle.variable}`}>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <RootProviders>
+      <html lang="pt" className={`${inter.variable} ${belle.variable}`}>
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </RootProviders>
   )
 }

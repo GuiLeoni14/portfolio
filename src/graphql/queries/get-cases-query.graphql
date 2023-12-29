@@ -1,0 +1,21 @@
+query getCases(
+  $where: CaseWhereInput
+  $orderBy: CaseOrderByInput
+  $first: Int
+  $skip: Int
+  $last: Int
+  $after: String
+  $before: String
+) {
+  cases(
+    orderBy: $orderBy
+    first: $first
+    skip: $skip
+    where: $where
+    last: $last
+    after: $after
+    before: $before
+  ) {
+    ...case
+  }
+}

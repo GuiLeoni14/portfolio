@@ -1,0 +1,21 @@
+query getTags(
+  $where: TagWhereInput
+  $orderBy: TagOrderByInput
+  $first: Int
+  $skip: Int
+  $last: Int
+  $after: String
+  $before: String
+) {
+  tags(
+    orderBy: $orderBy
+    first: $first
+    skip: $skip
+    where: $where
+    last: $last
+    after: $after
+    before: $before
+  ) {
+    ...tag
+  }
+}
