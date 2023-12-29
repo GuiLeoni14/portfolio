@@ -7,6 +7,13 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'media.graphassets.com',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig
