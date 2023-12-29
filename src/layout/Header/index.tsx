@@ -194,13 +194,18 @@ export function Header() {
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                   {components.map((component) => (
-                    <ListItem
+                    <Link
                       key={component.title}
-                      title={component.title}
                       href={component.href}
+                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
-                      {component.description}
-                    </ListItem>
+                      <div className="text-sm font-medium leading-none">
+                        {component.title}
+                      </div>
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                        {component.description}
+                      </p>
+                    </Link>
                   ))}
                 </ul>
               </NavigationMenuContent>
@@ -248,30 +253,19 @@ export function Header() {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <ListItem href="#" target="_blank" title="Whatsapp">
-                    <div className="flex items-center gap-2">
-                      <Phone />
-                      +35 999979041
-                    </div>
-                  </ListItem>
-                  <ListItem href="#" title="Email">
-                    <div className="flex items-center gap-2">
-                      <Mails />
-                      guileonidev@gmail.com
-                    </div>
-                  </ListItem>
-                  <ListItem href="#" title="Linkedin">
-                    <div className="flex items-center gap-2">
-                      <Linkedin />
-                      Guilherme Leoni
-                    </div>
-                  </ListItem>
-                  <ListItem href="#" title="Github">
-                    <div className="flex items-center gap-2">
-                      <Github />
-                      GuiLeoni14
-                    </div>
-                  </ListItem>
+                  {contacts.map((contact) => (
+                    <ListItem
+                      key={contact.title}
+                      title={contact.title}
+                      href={contact.href}
+                      target="_blank"
+                    >
+                      <div className="flex items-center gap-2">
+                        {contact.icon}
+                        {contact.text}
+                      </div>
+                    </ListItem>
+                  ))}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
