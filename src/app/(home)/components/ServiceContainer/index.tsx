@@ -5,12 +5,13 @@ import {
   MonitorSmartphone,
   ShoppingCart,
 } from 'lucide-react'
+import Link from 'next/link'
 
 export function ServiceContainer() {
   return (
     <section className="bg-gray-900 py-20 lg:py-40">
       <div className="container mx-auto flex flex-col gap-8 lg:flex-row">
-        <div className="w-full">
+        <div className="w-full lg:max-w-[520px]">
           <span className="inline-block rounded-full bg-gradient-title p-2 text-white">
             Meus serviços
           </span>
@@ -23,29 +24,31 @@ export function ServiceContainer() {
             Solicitar orçamento
           </Button>
         </div>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div
+        <div className="grid flex-1 grid-cols-1 gap-4 md:grid-cols-2">
+          <Link
             className="flex flex-col items-start gap-2 rounded-md border border-transparent bg-gray-700 p-8 transition-all
           hover:border-gray-200"
+            href="/servicos/criacao-de-landing-page"
           >
             <MonitorSmartphone />
             <strong className="text-xl">Landing Pages</strong>
             <p className="text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur autem doloremque dolore odio aliquam omnis.
+              Quer converter visitantes em clientes? Com meu serviço de Landing
+              Page, criarei uma experiência envolvente e focada em conversões.
             </p>
-          </div>
-          <div
+          </Link>
+          <Link
             className="flex flex-col items-start gap-2 rounded-md border border-transparent bg-gray-700 p-8 transition-all
           hover:border-gray-200"
+            href="/servicos/criacao-de-ecommerce"
           >
             <ShoppingCart />
             <strong className="text-xl">E-commerce</strong>
             <p className="text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur autem doloremque dolore odio aliquam omnis.
+              Desenvolvo soluções de e-commerce adaptadas às suas necessidades,
+              garantindo uma experiência de compra eficiente e intuitiva.
             </p>
-          </div>
+          </Link>
           <div
             className="flex flex-col items-start gap-2 rounded-md border border-transparent bg-gray-700 p-8 transition-all
           hover:border-gray-200"
@@ -53,8 +56,8 @@ export function ServiceContainer() {
             <Layout />
             <strong className="text-xl">Site institucional</strong>
             <p className="text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur autem doloremque dolore odio aliquam omnis.
+              Construo sites institucionais que destacam a identidade única da
+              sua empresa, fortalecendo sua presença online.
             </p>
           </div>
           <div
@@ -64,8 +67,8 @@ export function ServiceContainer() {
             <LayoutTemplate />
             <strong className="text-xl">Consultoria</strong>
             <p className="text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur autem doloremque dolore odio aliquam omnis.
+              Guiarei sua jornada digital, fornecendo insights e estratégias
+              personalizadas para alcançar o sucesso online.
             </p>
           </div>
         </div>

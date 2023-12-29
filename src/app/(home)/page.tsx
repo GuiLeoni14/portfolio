@@ -1,10 +1,16 @@
-'use client'
 import { Button } from '@/components/Button'
 import { TechnologySlide } from '@/components/TechnologySlide'
 import { CaseContainer } from './components/CaseContainer'
-import { TypeAnimation } from 'react-type-animation'
 import { ServiceContainer } from './components/ServiceContainer'
 import { DepositionsContainer } from '@/components/DepositionsContainer'
+import { Metadata } from 'next'
+import { TitleAnimation } from './components/TitleAnimation'
+
+export const metadata: Metadata = {
+  title: 'Página Inicial',
+  description:
+    'Como desenvolvedor de sites, especializo-me na criação de soluções digitais personalizadas, desde landing pages envolventes até plataformas de e-commerce eficientes e muito mais. Transforme sua presença online com design exclusivo, funcionalidades avançadas e uma abordagem centrada no usuário. Vamos juntos construir uma experiência digital única para impulsionar seu sucesso online',
+}
 
 export default function Home() {
   return (
@@ -24,21 +30,7 @@ export default function Home() {
             <h1 className="text-4xl font-semibold lg:text-6xl">
               Construindo a solução digital para{' '}
             </h1>
-            <TypeAnimation
-              className="relative bg-gradient-title bg-clip-text text-center text-4xl font-bold text-transparent after:absolute after:bottom-0 after:left-0 after:h-2
-              after:w-full after:bg-white lg:text-6xl"
-              sequence={[
-                'seu problema!',
-                2000,
-                'sua empresa!',
-                2000,
-                'seu negócio!',
-                2000,
-              ]}
-              wrapper="strong"
-              cursor={false}
-              repeat={Infinity}
-            />
+            <TitleAnimation />
             <p className="mt-4 text-base text-gray-200 lg:text-2xl">
               Olá! Sou Guilherme dos Reis Leoni, especializado em criar soluções
               web personalizadas, desde landing pages envolventes até e-commerce

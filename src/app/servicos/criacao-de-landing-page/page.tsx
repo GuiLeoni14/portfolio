@@ -6,6 +6,7 @@ import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { ProcessCards } from '@/components/ProcessCards'
 import { TechnologySlide } from '@/components/TechnologySlide'
 import { Chrome, LayoutTemplate } from 'lucide-react'
+import { Metadata } from 'next'
 
 const cases: Case[] = [
   {
@@ -41,6 +42,12 @@ const cases: Case[] = [
     },
   },
 ]
+
+export const metadata: Metadata = {
+  title: 'Criação de landing pages',
+  description:
+    'Como especialista em criação de landing pages, estou aqui para transformar sua mensagem em conversões. Desenvolvo páginas envolventes, otimizadas e focadas em resultados. Seja para campanhas específicas ou captação contínua, conte comigo para criar uma experiência que transforma visitantes em clientes. Vamos construir juntos landing pages que impulsionam seu sucesso online.',
+}
 
 export default async function LpServicePage() {
   return (
@@ -92,19 +99,21 @@ export default async function LpServicePage() {
           <div className="mt-16">
             <ProcessCards />
           </div>
-          <div className="flex gap-8 pt-40">
-            <CardHover className="w-full max-w-[348px]">
+          <div className="flex flex-col gap-8 pt-20 md:flex-row md:pt-40">
+            <CardHover className="mx-auto w-full max-w-[174px] md:max-w-[348px] lg:mx-0">
               <div
-                className="flex h-[644px] w-full max-w-[348px] flex-col items-start gap-2 rounded-md border border-transparent
-          bg-gray-700 bg-cover bg-center bg-no-repeat p-8 transition-all hover:border-gray-200"
+                className="mx-auto flex h-[322px] max-w-[174px] flex-col items-start gap-2 rounded-md border border-transparent bg-gray-700 bg-cover bg-center bg-no-repeat
+          p-8 transition-all hover:border-gray-200 md:mx-0 md:h-[644px] md:w-full md:max-w-[348px]"
                 style={{
                   backgroundImage: `url('/img/mobile.svg')`,
                 }}
               >
                 <div className="flex h-full flex-col items-center justify-center gap-4">
                   <LayoutTemplate size={42} />
-                  <strong className="text-2xl">Site responsivo</strong>
-                  <p className="text-center text-base">
+                  <strong className="block text-center text-sm md:text-2xl">
+                    Site responsivo
+                  </strong>
+                  <p className="text-center text-sm md:text-base">
                     Seu site preparado para dispositivos móveis.
                   </p>
                 </div>
@@ -121,12 +130,12 @@ export default async function LpServicePage() {
                 marca. Sacou?
               </p>
               <img
-                className="mt-auto"
+                className="mt-4 md:mt-auto"
                 src="https://zyro.com/cdn-cgi/image/w=1100,q=95,f=auto/images/landingWebsite/hero.png"
               />
             </div>
           </div>
-          <div className="flex gap-8 pt-40">
+          <div className="flex flex-col gap-8 pt-20 md:pt-40 lg:flex-row">
             <div className="flex-1">
               <h2 className="text-2xl font-bold md:text-4xl">
                 Sua landing page se encaixando em qualquer navegador
@@ -139,18 +148,20 @@ export default async function LpServicePage() {
                 Sua página, suas regras, em qualquer lugar
               </p>
             </div>
-            <CardHover className="w-full max-w-[836px]">
+            <CardHover className="w-full max-w-full md:max-w-[836px]">
               <div
-                className="flex h-[645px] w-full max-w-full flex-col items-start gap-2 rounded-md border border-transparent
-          bg-gray-700 bg-cover bg-center bg-no-repeat p-8 transition-all hover:border-gray-200"
+                className="flex h-[322px] w-full max-w-full flex-col items-start gap-2 rounded-md border border-transparent bg-gray-700
+          bg-cover bg-center bg-no-repeat p-8 transition-all hover:border-gray-200 md:h-[645px]"
                 style={{
                   backgroundImage: `url('/img/desktop.svg')`,
                 }}
               >
                 <div className="flex h-full w-full flex-col items-center justify-center gap-4">
                   <Chrome size={42} />
-                  <strong className="text-2xl">Cross-browser</strong>
-                  <p className="text-center text-base">
+                  <strong className="block text-center text-sm md:text-2xl">
+                    Cross-browser
+                  </strong>
+                  <p className="text-center text-sm md:text-base">
                     Seu site com funcionalidade em qualquer navegador.
                   </p>
                 </div>

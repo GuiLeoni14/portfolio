@@ -15,6 +15,10 @@ module.exports = {
         '2xl': '1400px',
       },
     },
+    fontFamily: {
+      sans: 'var(--font-inter)',
+      belle: 'var(--font-belle)',
+    },
     extend: {
       colors: {
         gray: {

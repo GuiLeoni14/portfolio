@@ -4,6 +4,7 @@ import { CardHover } from '@/components/CardHover'
 import { Case, CaseContainer } from '@/components/CaseContainer'
 import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { ProcessCards } from '@/components/ProcessCards'
+import { Metadata } from 'next'
 
 const platforms = [
   {
@@ -48,6 +49,12 @@ const cases: Case[] = [
   },
 ]
 
+export const metadata: Metadata = {
+  title: 'Criação de ecommerce',
+  description:
+    'Transforme meu negócio digital com meu serviço especializado em criação de e-commerce. Desenvolvo plataformas personalizadas, intuitivas e seguras, proporcionando aos meus clientes uma experiência de compra única. Vamos juntos construir uma loja virtual de sucesso para impulsionar suas vendas online. Estou pronto para transformar sua visão em realidade digital!',
+}
+
 export default function EcServicePage() {
   return (
     <main className="pt-[80px]">
@@ -72,7 +79,7 @@ export default function EcServicePage() {
         <div className="mt-10">
           <CardHover>
             <img
-              className="max-w-4xl"
+              className="max-w-full lg:max-w-4xl"
               src="https://nextjs.org/static/images/commerce/ecommerce.png"
               alt="Imagem de um ecommerce"
             />
@@ -87,13 +94,13 @@ export default function EcServicePage() {
             </span>
             <h2 className="mt-2 text-4xl font-bold md:text-6xl">Plataformas</h2>
           </div>
-          <div className="grid flex-1 grid-cols-3 gap-4">
+          <div className="grid flex-1 grid-cols-2 gap-4 lg:grid-cols-3">
             {platforms.map((platform) => {
               return (
                 <CardHover key={platform.name}>
                   <div className="flex h-full flex-col items-center justify-center gap-4 rounded-md border border-gray-100 bg-gray-700 p-4">
                     <img className="max-w-[120px]" src={platform.imageUrl} />
-                    <span className="inline-block rounded-full bg-gradient-title p-2 text-xl text-white">
+                    <span className="inline-block rounded-full bg-gradient-title p-2 text-sm text-white lg:text-xl">
                       {platform.name}
                     </span>
                   </div>
@@ -101,7 +108,7 @@ export default function EcServicePage() {
               )
             })}
             <div className="flex flex-col items-center justify-center gap-4 rounded-md border border-gray-100 bg-gray-900 p-4">
-              <span className="inline-block rounded-full bg-gradient-title p-2 text-xl text-white">
+              <span className="inline-block rounded-full bg-gradient-title p-2 text-sm text-white lg:text-xl">
                 E muito mais...
               </span>
             </div>

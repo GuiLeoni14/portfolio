@@ -27,6 +27,7 @@ import {
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from '@/components/Button'
 import { Github, Linkedin, Mails, Menu, Phone, X } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -42,13 +43,13 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: 'Site institucional',
-    href: '/servicos/criacao-de-site-institucional',
+    href: '#',
     description:
       'Construímos sua presença online com serviços de criação de site institucional',
   },
   {
     title: 'Consultoria digital',
-    href: '/servicos/consultoria-digital',
+    href: '#',
     description:
       'Guiamos sua jornada digital com nossa consultoria especializada',
   },
@@ -83,12 +84,18 @@ const contacts = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false)
+  const pathname = usePathname()
 
   React.useEffect(() => {
     const body = document.querySelector('body')
     if (!body) return
     menuOpen ? (body.style.overflow = 'hidden') : (body.style.overflow = 'auto')
   }, [menuOpen])
+
+  React.useEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
+
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex h-[80px] w-full items-center justify-center bg-gray-700 shadow-2xl">
       <div className="container mx-auto flex items-center justify-between">
@@ -104,7 +111,10 @@ export function Header() {
             </CollapsibleTrigger>
             <CollapsibleContent className="fixed right-0 top-[80px] w-full bg-gray-700 p-4">
               <ScrollArea className="flex h-[60vh] flex-col">
-                <Accordion type="single" collapsible defaultValue="service">
+                <Link href="/" className="block py-2 text-xl font-semibold">
+                  Home
+                </Link>
+                <Accordion type="single" collapsible>
                   <AccordionItem value="service">
                     <AccordionTrigger className="text-xl">
                       Serviços
@@ -146,10 +156,10 @@ export function Header() {
                       </div>
                     </AccordionContent>
                   </AccordionItem>
-                  <Link href="/" className="block py-2 text-xl font-semibold">
-                    Sobre
-                  </Link>
                 </Accordion>
+                <Link href="/" className="block py-2 text-xl font-semibold">
+                  Sobre
+                </Link>
                 <Button className="mt-4">Solicitar orçamento</Button>
               </ScrollArea>
             </CollapsibleContent>
