@@ -25,11 +25,7 @@ export function SlideCard({
     <div className="relative h-full w-full">
       <div className="container relative z-20 mx-auto flex flex-col justify-between gap-10 py-10 md:py-20 lg:flex-row">
         <div className="flex w-full flex-col items-start lg:ml-[200px]">
-          <h3
-            className={`anime_title text-3xl font-bold text-white md:text-6xl`}
-          >
-            {title}
-          </h3>
+          <h3 className="text-3xl font-bold text-white md:text-6xl">{title}</h3>
           <div className="my-10">
             <div className="flex gap-5">
               <img className="w-full max-w-[200px]" src={pictureUrl} alt="" />

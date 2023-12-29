@@ -2,9 +2,9 @@
 import { Button } from '@/components/Button'
 import { TechnologySlide } from '@/components/TechnologySlide'
 import { CaseContainer } from './components/CaseContainer'
-import { DepositionsContainer } from './components/DepositionsContainer'
 import { TypeAnimation } from 'react-type-animation'
 import { ServiceContainer } from './components/ServiceContainer'
+import { DepositionsContainer } from '@/components/DepositionsContainer'
 
 export default function Home() {
   return (

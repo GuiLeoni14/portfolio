@@ -2,6 +2,7 @@ import { Button } from '@/components/Button'
 import { CallToAction } from '@/components/CallToAction'
 import { CardHover } from '@/components/CardHover'
 import { Case, CaseContainer } from '@/components/CaseContainer'
+import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { ProcessCards } from '@/components/ProcessCards'
 
 const platforms = [
@@ -54,13 +55,13 @@ export default function EcServicePage() {
         <span className="inline-block rounded-full bg-gradient-title p-2 text-white">
           Levando seu produto ao proximo nível!
         </span>
-        <h1 className="mt-2 text-4xl font-semibold lg:text-7xl">
+        <h1 className="mt-2 text-4xl font-semibold md:text-7xl">
           Criação de{' '}
           <span className="bg-gradient-title bg-clip-text font-bold text-transparent">
             E-commerce{' '}
           </span>
         </h1>
-        <p className="mt-4 text-base text-gray-200 lg:text-2xl">
+        <p className="mt-4 text-base text-gray-200 md:text-2xl">
           Potencialize sua presença online: serviço exclusivo de criação de
           e-commerce nas principais plataformas, incluindo Loja Integrada, Tray,
           VTEX, Shopify e mais. Desenvolvemos sua loja com expertise,
@@ -79,8 +80,8 @@ export default function EcServicePage() {
         </div>
       </section>
       <section className="bg-gray-900 py-20">
-        <div className="container mx-auto flex gap-10">
-          <div className="w-fit">
+        <div className="container mx-auto flex flex-col gap-10 lg:flex-row">
+          <div className="text-center lg:w-fit lg:text-start">
             <span className="inline-block rounded-full bg-gradient-title p-2 text-white">
               Levando seu produto ao proximo nível!
             </span>
@@ -108,8 +109,8 @@ export default function EcServicePage() {
         </div>
       </section>
       <section className="bg-gray-900 py-20">
-        <div className="container mx-auto flex gap-10">
-          <div className="w-fit">
+        <div className="container mx-auto flex flex-col gap-10 lg:flex-row">
+          <div className="text-center lg:w-fit lg:text-start">
             <span className="inline-block rounded-full bg-gradient-title p-2 text-white">
               Entenda o meu processo
             </span>
@@ -131,9 +132,10 @@ export default function EcServicePage() {
         </div>
         <CaseContainer cases={cases} />
       </section>
-      <section className="container mx-auto max-w-5xl py-20 md:py-40">
+      <section className="container mx-auto max-w-5xl py-20 lg:py-40">
         <CallToAction />
       </section>
+      <DepositionsContainer />
     </main>
   )
 }

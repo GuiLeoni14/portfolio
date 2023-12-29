@@ -76,7 +76,7 @@ export function DepositionsContainer() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null)
 
   return (
-    <div className="deposition relative h-auto w-full bg-stars bg-cover bg-center pt-20 md:pt-40">
+    <section className="deposition relative h-auto w-full bg-stars bg-cover bg-center pt-20 md:pt-40">
       <div className="container mx-auto mb-10 flex flex-col items-center gap-4 text-center">
         <span className="text-2xl text-gray-200">
           Ainda não está convencido?
@@ -157,6 +157,6 @@ export function DepositionsContainer() {
           })}
         </Swiper>
       </div>
-    </div>
+    </section>
   )
 }

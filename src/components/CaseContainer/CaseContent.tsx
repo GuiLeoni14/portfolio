@@ -27,7 +27,7 @@ export function CaseContent({
           boxShadow: `0 0 10px 0 ${color}`,
         }}
       >
-        <div className="space-y-10 p-4 lg:max-w-[45%] lg:p-0">
+        <div className="space-y-10 p-4 lg:max-w-[60%] lg:p-0">
           <img src={logo} className="max-w-[120px]" />
           <h2 className="text-4xl font-bold lg:text-6xl">{title}</h2>
           <p className="text-lg lg:text-2xl">{description}</p>
@@ -39,7 +39,12 @@ export function CaseContent({
               src={thumbnail}
             />
             <div className="absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-black/60 opacity-0 transition-all duration-300 group-hover:opacity-100">
-              <a href={link} target="_blank" rel="noopener noreferrer">
+              <a
+                className="rounded-full bg-gradient-title p-2"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Visualizar projeto
               </a>
             </div>

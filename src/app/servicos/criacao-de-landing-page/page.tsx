@@ -1,9 +1,46 @@
 import { Button } from '@/components/Button'
 import { CallToAction } from '@/components/CallToAction'
 import { CardHover } from '@/components/CardHover'
+import { Case, CaseContainer } from '@/components/CaseContainer'
+import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { ProcessCards } from '@/components/ProcessCards'
 import { TechnologySlide } from '@/components/TechnologySlide'
 import { Chrome, LayoutTemplate } from 'lucide-react'
+
+const cases: Case[] = [
+  {
+    caseFlag: {
+      title: 'Banco Neon',
+      color: '#00c3ff',
+      subTitle: 'Landing page, responsividade e muito mais',
+    },
+    caseContent: {
+      title: 'Banco Neon',
+      description:
+        'Criei uma landing page irada para a empresa Neon como parte do meu projeto de estudos. Mergulhei de cabeça no design, buscando uma estética chamativa e uma experiência do usuário de primeira. Foi incrível colocar em prática o que venho aprendendo. Dê uma olhada na minha criação para a Neon e me conte o que achou!',
+      logo: '/img/projects/logo_neon.png',
+      thumbnail: '/img/projects/neon.png',
+      link: 'https://staage.com/',
+      color: '#00c3ff',
+    },
+  },
+  {
+    caseFlag: {
+      title: 'Baiuca',
+      color: '#ff8800',
+      subTitle: 'Landing page, site institucional e muito mais',
+    },
+    caseContent: {
+      title: 'Baiuca Móveis Rústicos',
+      description:
+        'Com muito entusiasmo, contribuí para a criação da landing page e do site institucional da Baiuca Móveis Rústicos. Focamos no design para capturar toda a autenticidade e beleza dos móveis, criando uma experiência única. Explore a landing page e o site para sentir a essência acolhedora da Baiuca.',
+      logo: '/img/projects/logo_baiuca.png',
+      thumbnail: '/img/projects/baiuca.png',
+      link: 'https://staage.com/',
+      color: '#ff8800',
+    },
+  },
+]
 
 export default async function LpServicePage() {
   return (
@@ -75,13 +112,13 @@ export default async function LpServicePage() {
             </CardHover>
             <div className="flex flex-1 flex-col">
               <h2 className="text-2xl font-bold md:text-4xl">
-                Seu layout se encaixando em qualquer dispositivo
+                Sua landing page se encaixando em qualquer dispositivo
               </h2>
-              <p className="mt-4 text-base">
-                Site responsivo é aquele que se adapta a qualquer tamanho de
-                tela. Essa adaptação não é apenas uma questão técnica, já que
-                influencia também a experiência do usuário no site e a
-                satisfação dos consumidores com a marca.{' '}
+              <p className="mt-4 text-xl">
+                Site responsivo é aquele que se dá bem em qualquer tamanho de
+                tela. Essa adaptação não é só técnica, ela também manda na
+                experiência que você tem no site e na satisfação geral com a
+                marca. Sacou?
               </p>
               <img
                 className="mt-auto"
@@ -92,13 +129,14 @@ export default async function LpServicePage() {
           <div className="flex gap-8 pt-40">
             <div className="flex-1">
               <h2 className="text-2xl font-bold md:text-4xl">
-                Seu layout se encaixando em qualquer navegador
+                Sua landing page se encaixando em qualquer navegador
               </h2>
-              <p className="mt-4 text-base">
-                Site responsivo é aquele que se adapta a qualquer tamanho de
-                tela. Essa adaptação não é apenas uma questão técnica, já que
-                influencia também a experiência do usuário no site e a
-                satisfação dos consumidores com a marca.{' '}
+              <p className="mt-4 text-xl">
+                Faça sua landing page brilhar em qualquer navegador! Ela é tipo
+                um camaleão da web, se encaixa bem em qualquer lugar. Navegue
+                tranquilo e curta a vibe, não importa se você tá usando Chrome,
+                Firefox, ou até o navegador do tio lá que ninguém lembra o nome.
+                Sua página, suas regras, em qualquer lugar
               </p>
             </div>
             <CardHover className="w-full max-w-[836px]">
@@ -121,9 +159,23 @@ export default async function LpServicePage() {
           </div>
         </div>
       </section>
+      <section className="bg-blue-900 py-20">
+        <div className="container mx-auto">
+          <div className="text-center">
+            <span className="inline-block rounded-full bg-gradient-title p-2 text-white">
+              Confira empresas que já transformei com meu trabalho
+            </span>
+            <h2 className="mt-2 text-4xl font-bold lg:text-6xl">
+              Alguns cases
+            </h2>
+          </div>
+        </div>
+        <CaseContainer cases={cases} />
+      </section>
       <section className="container mx-auto max-w-5xl py-20 md:py-40">
         <CallToAction />
       </section>
+      <DepositionsContainer />
     </main>
   )
 }

@@ -13,8 +13,20 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from '@/components/Button'
-import { Github, Linkedin, Mails, Phone } from 'lucide-react'
+import { Github, Linkedin, Mails, Menu, Phone, X } from 'lucide-react'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -42,7 +54,41 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
+const contacts = [
+  {
+    icon: <Phone />,
+    text: '+35 999979041',
+    href: '/',
+    title: 'WhatsApp',
+  },
+  {
+    icon: <Mails />,
+    text: 'guileonidev@gmail.com',
+    href: '#',
+    title: 'Email',
+  },
+  {
+    icon: <Linkedin />,
+    text: 'Guilherme Leoni',
+    href: '#',
+    title: 'Linkedin',
+  },
+  {
+    icon: <Github />,
+    text: 'GuiLeoni14',
+    href: '#',
+    title: 'Github',
+  },
+]
+
 export function Header() {
+  const [menuOpen, setMenuOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    const body = document.querySelector('body')
+    if (!body) return
+    menuOpen ? (body.style.overflow = 'hidden') : (body.style.overflow = 'auto')
+  }, [menuOpen])
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex h-[80px] w-full items-center justify-center bg-gray-700 shadow-2xl">
       <div className="container mx-auto flex items-center justify-between">
@@ -51,7 +97,71 @@ export function Header() {
             GL
           </span>
         </div>
-        <NavigationMenu>
+        <div className="lg:hidden">
+          <Collapsible open={menuOpen} className="relative z-10">
+            <CollapsibleTrigger onClick={() => setMenuOpen((state) => !state)}>
+              {menuOpen ? <X size={32} /> : <Menu size={32} />}
+            </CollapsibleTrigger>
+            <CollapsibleContent className="fixed right-0 top-[80px] w-full bg-gray-700 p-4">
+              <ScrollArea className="flex h-[60vh] flex-col">
+                <Accordion type="single" collapsible defaultValue="service">
+                  <AccordionItem value="service">
+                    <AccordionTrigger className="text-xl">
+                      Serviços
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="grid w-[400px] gap-4 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {components.map((component) => (
+                          <Link href={component.href} key={component.title}>
+                            <div className="flex flex-col">
+                              <strong className="text-lg">
+                                {component.title}
+                              </strong>
+                              <span>{component.description}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="contact">
+                    <AccordionTrigger className="text-xl">
+                      Contato
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="grid w-[400px] gap-4 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {contacts.map((contact) => (
+                          <Link
+                            href={contact.href}
+                            key={contact.text}
+                            className="flex flex-col gap-2"
+                          >
+                            <strong className="text-lg">{contact.title}</strong>
+                            <div className="flex gap-2">
+                              {contact.icon}
+                              <span>{contact.text}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <Link href="/" className="block py-2 text-xl font-semibold">
+                    Sobre
+                  </Link>
+                </Accordion>
+                <Button className="mt-4">Solicitar orçamento</Button>
+              </ScrollArea>
+            </CollapsibleContent>
+          </Collapsible>
+          {menuOpen && (
+            <div
+              onClick={() => setMenuOpen(false)}
+              className="fixed inset-0 h-full w-full bg-black/60"
+            />
+          )}
+        </div>
+        <NavigationMenu className="hidden lg:block">
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
@@ -157,7 +267,7 @@ export function Header() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Button>Solicitar orçamento</Button>
+        <Button className="hidden lg:block">Solicitar orçamento</Button>
       </div>
     </header>
   )
