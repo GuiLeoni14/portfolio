@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "codegen": "graphql-codegen",
-    "lint:fix": "next lint --fix",
-    "postbuild": "next-sitemap"
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
