@@ -62,14 +62,17 @@ export default async function LpServicePage() {
                 src="/img/icons/arrow.svg"
                 width={120}
                 height={100}
-                alt=""
+                alt="Icon de uma arrow"
               />
               <span>Eu tenho as ferramentas para criar sua solução</span>
             </div>
           </div>
         </div>
         <div className="flex-1">
-          <img src="https://assets-global.website-files.com/58cbec12bff1e813281c2d6e/64c13721ea9725b8dd2625eb_sale-landing-page-c.webp" />
+          <img
+            src="https://assets-global.website-files.com/58cbec12bff1e813281c2d6e/64c13721ea9725b8dd2625eb_sale-landing-page-c.webp"
+            alt="Imagem de uma landing page | Desenvolvedor de sites"
+          />
         </div>
       </section>
       <section className="bg-gray-900 py-20">
@@ -116,6 +119,7 @@ export default async function LpServicePage() {
               <img
                 className="mt-4 md:mt-auto"
                 src="https://zyro.com/cdn-cgi/image/w=1100,q=95,f=auto/images/landingWebsite/hero.png"
+                alt="Imagem de uma landing page | Desenvolvedor de sites"
               />
             </div>
           </div>

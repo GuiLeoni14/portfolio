@@ -25,7 +25,11 @@ export function CaseContent({
         }}
       >
         <div className="space-y-10 p-4 lg:max-w-[60%] lg:p-0">
-          <img src={logo} className="max-w-[120px]" />
+          <img
+            src={logo}
+            className="max-w-[120px]"
+            alt={`Logo ${title} | Desenvolvedor de sites`}
+          />
           <h2 className="text-4xl font-bold lg:text-6xl">{title}</h2>
           <p className="text-lg lg:text-2xl">{description}</p>
         </div>

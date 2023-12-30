@@ -32,7 +32,7 @@ export function CaseFlag({ title, subTitle, color, message }: CaseFlagProps) {
             src="/img/icons/arrow.svg"
             width={120}
             height={100}
-            alt=""
+            alt="Icon de uma arrow"
           />
           <span>{message}</span>
         </div>

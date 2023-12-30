@@ -98,7 +98,11 @@ export default async function EcServicePage() {
               return (
                 <CardHover key={platform.name}>
                   <div className="flex h-full flex-col items-center justify-center gap-4 rounded-md border border-gray-100 bg-gray-700 p-4">
-                    <img className="max-w-[120px]" src={platform.imageUrl} />
+                    <img
+                      className="max-w-[120px]"
+                      src={platform.imageUrl}
+                      alt={`Imagem da plataforma ${platform.name} | Desenvolvedor de sites`}
+                    />
                     <span className="inline-block rounded-full bg-gradient-title p-2 text-sm text-white lg:text-xl">
                       {platform.name}
                     </span>
