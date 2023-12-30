@@ -52,7 +52,7 @@ export default async function LpServicePage() {
             rel="noopener noreferrer"
             className="mt-8 inline-block"
           >
-            <Button>Solicitar orçamento</Button>
+            <Button>Me chame pelo Whatsapp</Button>
           </a>
           <div className="relative mt-10">
             <TechnologySlide />

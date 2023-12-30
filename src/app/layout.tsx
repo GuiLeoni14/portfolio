@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 // eslint-disable-next-line
 import { Inter, La_Belle_Aurore } from 'next/font/google'
@@ -38,7 +39,8 @@ export default function RootLayout({
           >
             <Header />
             {children}
-          </ThemeProvider>
+          </ThemeProvider>{' '}
+          <Analytics />
         </body>
       </html>
     </RootProviders>

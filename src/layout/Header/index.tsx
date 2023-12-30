@@ -28,6 +28,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from '@/components/Button'
 import { Github, Linkedin, Mails, Menu, Phone, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
+import { BudgetRequest } from '@/components/BudgetRequest'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -166,14 +167,7 @@ export function Header() {
                 <Link href="/" className="block py-2 text-xl font-semibold">
                   Sobre
                 </Link>
-                <a
-                  href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block"
-                >
-                  <Button>Solicitar orçamento</Button>
-                </a>
+                <BudgetRequest />
               </ScrollArea>
             </CollapsibleContent>
           </Collapsible>
@@ -254,14 +248,7 @@ export function Header() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <a
-          href="https://api.whatsapp.com/send/?phone=5535999979041&text&type=phone_number&app_absent=0"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden lg:block"
-        >
-          <Button>Solicitar orçamento</Button>
-        </a>
+        <BudgetRequest />
       </div>
     </header>
   )

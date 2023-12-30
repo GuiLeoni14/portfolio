@@ -73,7 +73,7 @@ export default async function EcServicePage() {
           rel="noopener noreferrer"
           className="mt-8 inline-block"
         >
-          <Button>Solicitar orçamento</Button>
+          <Button>Me chame pelo WhatsApp</Button>
         </a>
         <div className="mt-10">
           <CardHover>

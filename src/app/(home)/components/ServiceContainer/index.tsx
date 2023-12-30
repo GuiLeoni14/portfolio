@@ -27,7 +27,7 @@ export function ServiceContainer() {
             rel="noopener noreferrer"
             className="mt-8 inline-block"
           >
-            <Button variant="primary">Solicitar orçamento</Button>
+            <Button variant="primary">Me chame pelo Whatsapp</Button>
           </a>
         </div>
         <div className="grid flex-1 grid-cols-1 gap-4 md:grid-cols-2">
