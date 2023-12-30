@@ -123,10 +123,10 @@ export function BudgetRequest() {
         ) : (
           <>
             <DialogHeader>
-              <DialogTitle>Entrar para lista de espera</DialogTitle>
+              <DialogTitle>Contato e orçamento</DialogTitle>
               <DialogDescription>
-                Informe aqui seu email para ser notificado quando abrirá uma
-                nova turma para o curso The Next Dev - Full-stack Next.js 14.
+                Informe seus dados e logo entremos em contato para realizar um
+                orçamento
               </DialogDescription>
             </DialogHeader>
             <Form {...form}>
