@@ -1,5 +1,9 @@
+import Link from 'next/link'
+import { Button } from '../Button'
+
 interface CaseContentProps {
   title: string
+  slug: string
   description: string
   logo: string
   thumbnail: string
@@ -13,6 +17,7 @@ export function CaseContent({
   link,
   logo,
   thumbnail,
+  slug,
   color,
 }: CaseContentProps) {
   return (
@@ -24,14 +29,17 @@ export function CaseContent({
           boxShadow: `0 0 10px 0 ${color}`,
         }}
       >
-        <div className="space-y-10 p-4 lg:max-w-[60%] lg:p-0">
+        <div className="p-4 lg:max-w-[45%] lg:p-0 2xl:max-w-[60%]">
           <img
             src={logo}
             className="max-w-[120px]"
             alt={`Logo ${title} | Desenvolvedor de sites`}
           />
-          <h2 className="text-4xl font-bold lg:text-6xl">{title}</h2>
-          <p className="text-lg lg:text-2xl">{description}</p>
+          <h2 className="mt-4 text-4xl font-bold lg:text-6xl">{title}</h2>
+          <p className="mt-2 text-lg lg:text-2xl">{description}</p>
+          <Link href={`/projetos/${slug}`} className="mt-8 inline-block">
+            <Button variant="outline">Confira mais informações</Button>
+          </Link>
         </div>
         <div className="group left-[50vw] right-0 top-0 mt-4 h-full w-full overflow-hidden bg-cover bg-center lg:absolute lg:mt-0 lg:max-w-[50vw]">
           <div className="relative h-full w-full">

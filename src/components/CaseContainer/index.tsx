@@ -68,6 +68,7 @@ export function CaseContainer({ cases }: CaseContainerProps) {
               />
               <CaseContent
                 title={job.title}
+                slug={job.slug}
                 description={job.description}
                 logo={job.logo.url}
                 thumbnail={job.cover.url}
