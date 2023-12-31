@@ -6,7 +6,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 
-export function CasesList() {
+interface CasesListProps {
+  title?: string
+}
+export function CasesList({ title }: CasesListProps) {
   const params = useParams<{ tagSlug: string }>()
 
   const { data: cases, isLoading } = useCases({
@@ -35,7 +38,7 @@ export function CasesList() {
           <span className="hidden bg-gradient-title bg-clip-text font-belle font-bold text-transparent sm:inline-block">
             {'<>'}
           </span>{' '}
-          Projetos recentes{' '}
+          {title || 'Projetos recentes'}{' '}
           <span className="hidden bg-gradient-title bg-clip-text font-belle font-bold text-transparent sm:inline-block">
             {'</>'}
           </span>

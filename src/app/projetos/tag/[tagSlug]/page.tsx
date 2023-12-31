@@ -57,12 +57,14 @@ export async function generateMetadata({
   }
 }
 
-export default async function TagPage() {
+export default async function TagPage({ params }: TagPageProps) {
+  const tag = await getTag(params.tagSlug)
+
   return (
     <main className="pt-[80px]">
       <section className="py-10">
         <div className="container mx-auto">
-          <CasesList />
+          <CasesList title={tag.name} />
         </div>
       </section>
       <section className="container mx-auto max-w-5xl py-20 md:py-40">
