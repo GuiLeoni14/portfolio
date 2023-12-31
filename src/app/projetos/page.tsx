@@ -2,7 +2,6 @@ import { CallToAction } from '@/components/CallToAction'
 import { CasesList } from './components/CasesList'
 import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { Metadata } from 'next'
-import { Suspense } from 'react'
 
 export const metadata: Metadata = {
   title: 'Meus projetos',
