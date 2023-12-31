@@ -37,9 +37,12 @@ export default async function Home() {
               className="pointer-events-none absolute left-[3.25rem] top-0 hidden lg:block"
               alt="Linhas"
             />
-            <h1 className="text-4xl font-semibold lg:text-6xl">
-              Construindo a solução digital para{' '}
+            <h1 className="hidden text-4xl font-semibold lg:text-6xl">
+              Desenvolvedor de sites
             </h1>
+            <h2 className="text-4xl font-semibold lg:text-6xl">
+              Construindo a solução digital para{' '}
+            </h2>
             <TitleAnimation />
             <p className="mt-4 text-base text-gray-200 lg:text-2xl">
               Olá! Sou Guilherme dos Reis Leoni, especializado em criar soluções
