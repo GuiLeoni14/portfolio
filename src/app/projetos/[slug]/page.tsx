@@ -1,7 +1,6 @@
 import { CaseFragment } from '@/graphql/generated'
 import { fetchCases } from '@/hooks/fetch/useCases'
 import { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 interface ProjectPageProps {
@@ -32,6 +31,23 @@ async function getCase(slug: string): Promise<CaseFragment> {
   return job
 }
 
+export async function generateStaticParams() {
+  const cases = await fetchCases({
+    variables: {
+      last: 100,
+    },
+    init: {
+      next: {
+        revalidate: 60 * 60, // 1 hour
+      },
+    },
+  })
+
+  return cases.map((job) => {
+    return { slug: job.slug }
+  })
+}
+
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
@@ -57,7 +73,7 @@ export async function generateMetadata({
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const job = await getCase(params.slug)
   return (
-    <main className="pt-[80px]">
+    <main className="bg-gray-700 pt-[80px]">
       <div
         className="relative min-h-[320px] w-full bg-cover bg-center bg-no-repeat"
         style={{
@@ -96,7 +112,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="py-10">
         <div className="container mx-auto">
           <div
-            className="prose lg:prose-xl max-w-full"
+            className="prose max-w-full dark:prose-invert lg:prose-xl"
             dangerouslySetInnerHTML={{ __html: job.content.html }}
           />
         </div>

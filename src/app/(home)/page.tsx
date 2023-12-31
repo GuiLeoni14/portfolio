@@ -21,7 +21,13 @@ export default async function Home() {
     variables: {
       last: 6,
     },
+    init: {
+      next: {
+        revalidate: 60 * 60, // 1hr
+      },
+    },
   })
+
   return (
     <main className="pt-[80px]">
       <div
