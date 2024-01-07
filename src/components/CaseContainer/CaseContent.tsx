@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '../Button'
+import { Meteors } from '../ui/meteors'
 
 interface CaseContentProps {
   title: string
@@ -63,6 +64,7 @@ export function CaseContent({
           </div>
         </div>
       </div>
+      <Meteors number={20} />
     </div>
   )
 }
