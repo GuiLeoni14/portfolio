@@ -248,7 +248,9 @@ export function Header() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <BudgetRequest />
+        <div className="hidden lg:block">
+          <BudgetRequest />
+        </div>
       </div>
     </header>
   )
