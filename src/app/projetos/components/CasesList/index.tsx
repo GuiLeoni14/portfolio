@@ -1,5 +1,6 @@
 'use client'
 
+import { CardContainer } from '@/components/ui/3d-card'
 import { useCases } from '@/hooks/fetch/useCases'
 import { useTags } from '@/hooks/fetch/useTags'
 import Image from 'next/image'
@@ -17,7 +18,7 @@ export function CasesList({ title }: CasesListProps) {
     variables: {
       last: 20,
       where: {
-        tags_every: {
+        tags_some: {
           slug: params.tagSlug,
         },
       },
@@ -77,45 +78,47 @@ export function CasesList({ title }: CasesListProps) {
       <div className="mt-8 grid  grid-cols-2 gap-4 md:grid-cols-3">
         {cases?.map((job) => {
           return (
-            <Link href={`/projetos/${job.slug}`} key={job.slug}>
-              <div className="group overflow-hidden rounded-md bg-gray-900">
-                <div className="h-[162px] w-full overflow-hidden md:h-[286px]">
-                  <Image
-                    quality={100}
-                    className="h-full w-full object-cover transition-transform group-hover:scale-110"
-                    src={job.cover.url}
-                    width={400}
-                    height={300}
-                    alt={`Imagem de thumbnail do projeto ${job.name} | Desenvolvedor de sites`}
-                  />
-                </div>
-                <div className="p-4">
-                  <strong className="text-xl font-bold md:text-2xl">
-                    {job.name}
-                  </strong>
-                  <div className="mt-4 flex flex-wrap">
-                    {job.tags.map((tag) => {
-                      return (
-                        <div
-                          key={tag.slug}
-                          className="flex items-center gap-2 rounded-full border border-gray-200 bg-gradient-title p-2"
-                        >
-                          {tag.icon && (
-                            <img
-                              src={tag.icon.url}
-                              alt={`Desenvolvedor de sites | Tag: ${tag.name}`}
-                            />
-                          )}
-                          <span className="text-sm md:text-base">
-                            {tag.name}
-                          </span>
-                        </div>
-                      )
-                    })}
+            <CardContainer key={job.slug}>
+              <Link href={`/projetos/${job.slug}`}>
+                <div className="group overflow-hidden rounded-md bg-gray-900">
+                  <div className="h-[162px] w-full overflow-hidden md:h-[286px]">
+                    <Image
+                      quality={100}
+                      className="h-full w-full object-cover transition-transform group-hover:scale-110"
+                      src={job.cover.url}
+                      width={400}
+                      height={300}
+                      alt={`Imagem de thumbnail do projeto ${job.name} | Desenvolvedor de sites`}
+                    />
+                  </div>
+                  <div className="p-4">
+                    <strong className="text-xl font-bold md:text-2xl">
+                      {job.name}
+                    </strong>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {job.tags.map((tag) => {
+                        return (
+                          <div
+                            key={tag.slug}
+                            className="flex items-center gap-2 rounded-full border border-gray-200 bg-gradient-title p-2"
+                          >
+                            {tag.icon && (
+                              <img
+                                src={tag.icon.url}
+                                alt={`Desenvolvedor de sites | Tag: ${tag.name}`}
+                              />
+                            )}
+                            <span className="text-sm md:text-base">
+                              {tag.name}
+                            </span>
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </CardContainer>
           )
         })}
         {isLoading &&
