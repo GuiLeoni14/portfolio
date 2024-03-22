@@ -1,9 +1,7 @@
 import { Button } from '@/components/Button'
 
 export interface SlideCardProps {
-  bannerUrl: string
   title: string
-  deposition: string
   logoUrl: string
   pictureUrl: string
   redirectUrl: string
@@ -14,8 +12,6 @@ export interface SlideCardProps {
 export function SlideCard({
   title,
   redirectUrl,
-  bannerUrl,
-  deposition,
   job,
   logoUrl,
   name,

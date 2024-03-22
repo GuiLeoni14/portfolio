@@ -23,52 +23,13 @@ import { Swiper as SwiperType } from 'swiper'
 
 const slideItems = [
   {
-    bannerUrl: 'https://www.designi.com.br/images/preview/11248054.jpg',
     title:
-      '“De todos os parceiros com quem já trabalhamos, a Insany faz, de longe, o trabalho mais design-oriented e de alto nível crítico...”',
-    deposition:
-      'Tábuas artesanais para churrasco personalizáveis: Transforme seu churrasco em uma experiência única com nossa qualidade e personalização exclusiva.',
-    logoUrl: 'https://insany.design/wp-content/uploads/2021/08/logo-loja.svg',
-    name: 'Gus_ Ruchaud',
-    job: 'Head de Branding e Product Marketing',
-    redirectUrl: 'teste',
-    pictureUrl: 'https://insany.design/wp-content/uploads/2021/08/gus.jpg',
-  },
-  {
-    bannerUrl: 'https://www.designi.com.br/images/preview/11248054.jpg',
-    title:
-      '“De todos os parceiros com quem já trabalhamos, a Insany faz, de longe, o trabalho mais design-oriented e de alto nível crítico...”',
-    deposition:
-      'Tábuas artesanais para churrasco personalizáveis: Transforme seu churrasco em uma experiência única com nossa qualidade e personalização exclusiva.',
-    logoUrl: 'https://insany.design/wp-content/uploads/2021/08/logo-loja.svg',
-    name: 'Gus_ Ruchaud',
-    job: 'Head de Branding e Product Marketing',
-    redirectUrl: 'teste',
-    pictureUrl: 'https://insany.design/wp-content/uploads/2021/08/gus.jpg',
-  },
-  {
-    bannerUrl: 'https://www.designi.com.br/images/preview/11248054.jpg',
-    title:
-      '“De todos os parceiros com quem já trabalhamos, a Insany faz, de longe, o trabalho mais design-oriented e de alto nível crítico...”',
-    deposition:
-      'Tábuas artesanais para churrasco personalizáveis: Transforme seu churrasco em uma experiência única com nossa qualidade e personalização exclusiva.',
-    logoUrl: 'https://insany.design/wp-content/uploads/2021/08/logo-loja.svg',
-    name: 'Gus_ Ruchaud',
-    job: 'Head de Branding e Product Marketing',
-    redirectUrl: 'teste',
-    pictureUrl: 'https://insany.design/wp-content/uploads/2021/08/gus.jpg',
-  },
-  {
-    bannerUrl: 'https://www.designi.com.br/images/preview/11248054.jpg',
-    title:
-      '“De todos os parceiros com quem já trabalhamos, a Insany faz, de longe, o trabalho mais design-oriented e de alto nível crítico...”',
-    deposition:
-      'Tábuas artesanais para churrasco personalizáveis: Transforme seu churrasco em uma experiência única com nossa qualidade e personalização exclusiva.',
-    logoUrl: 'https://insany.design/wp-content/uploads/2021/08/logo-loja.svg',
-    name: 'Gus_ Ruchaud',
-    job: 'Head de Branding e Product Marketing',
-    redirectUrl: 'teste',
-    pictureUrl: 'https://insany.design/wp-content/uploads/2021/08/gus.jpg',
+      '“Fui muito bem atendido e escutado, meu site saiu como eu queria, detalhe por detalhe em um prazo muito curto. Flexibilidade gráfica e agilidade resumem esse trabalho realizado.”',
+    logoUrl: '/img/depositions/keylogo.png',
+    name: 'Kennedy Oliveira',
+    job: 'CEO - O Grupo Key',
+    redirectUrl: 'https://ogrupokey.com',
+    pictureUrl: '/img/depositions/keypicture.png',
   },
 ] satisfies SlideCardProps[]
 
@@ -112,9 +73,7 @@ export function DepositionsContainer() {
               key={`${item.title}${index}`}
             >
               <SlideCard
-                bannerUrl={item.bannerUrl}
                 title={item.title}
-                deposition={item.deposition}
                 redirectUrl={item.redirectUrl}
                 logoUrl={item.logoUrl}
                 pictureUrl={item.pictureUrl}

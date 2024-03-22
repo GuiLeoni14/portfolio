@@ -79,7 +79,7 @@ export default async function EcServicePage() {
           <CardHover>
             <img
               className="max-w-full lg:max-w-4xl"
-              src="https://nextjs.org/static/images/commerce/ecommerce.png"
+              src="/img/ecommerce.png"
               alt="Imagem de um ecommerce"
             />
           </CardHover>
