@@ -25,7 +25,7 @@ export function SlideCard({
           <div className="my-10">
             <div className="flex gap-5">
               <img
-                className="w-full max-w-[200px]"
+                className="w-full max-w-[200px] object-cover"
                 src={pictureUrl}
                 alt="Imagem de picture"
               />

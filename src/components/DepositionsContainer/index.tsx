@@ -32,6 +32,22 @@ const slideItems = [
     pictureUrl: '/img/depositions/keypicture.png',
   },
   {
+    title: `“Atendimento rápido e preciso, executou tudo que eu precisei da forma que foi requisitado. Não é atoa que em breve farei outro projeto com o Guilherme.”`,
+    logoUrl: '/img/depositions/zgravitylogo.png',
+    name: 'Igor Zinsly - ZGravity',
+    job: 'CEO e Founder',
+    redirectUrl: 'https://www.zgravity.shop/',
+    pictureUrl: '/img/depositions/zgravitypicture.png',
+  },
+  {
+    title: `“Trabalhar com o Guilherme tem sido uma experiência verdadeiramente gratificante. Além de ser um desenvolvedor excepcional, demonstra ser uma pessoa incrivelmente comprometida. Sua capacidade de se adaptar às necessidades de cada projeto e sua abordagem ágil foram fundamentais para alcançarmos novos patamares. Estou ansioso para continuar nossa colaboração em futuros projetos, confiante em sua habilidade de impulsionar nossos empreendimentos adiante.”`,
+    logoUrl: '/img/depositions/icon_beep.svg',
+    name: 'Gabriel Suarez - Beep Digital',
+    job: 'CEO e Founder',
+    redirectUrl: 'https://www.beepdigital.com.br',
+    pictureUrl: '/img/depositions/suarez.png',
+  },
+  {
     title:
       '“Trabalhar com o Guilherme foi uma experiência incrível. Em dois projetos distintos, ele se mostrou não apenas um desenvolvedor front-end habilidoso, mas também uma pessoa extremamente solícita. Sempre disposto a ajudar e fazer seu melhor. Tenho um grande apreço por sua dedicação e profissionalismo. A flexibilidade e agilidade com que ele conduziu as demandas foram impressionantes, garantindo que tudo saísse exatamente como planejado. Sem dúvida, uma pessoa que pretendo continuar trabalhando em novos projetos.”',
     logoUrl: '/img/depositions/logo-ticto.svg',
@@ -39,14 +55,6 @@ const slideItems = [
     job: 'Gerente de projetos - Ticto',
     redirectUrl: 'https://www.ticto.com.br',
     pictureUrl: '/img/depositions/gustavo.png',
-  },
-  {
-    title: `“Atendimento rápido e preciso, executou tudo que eu precisei da forma que foi requisitado. Não é atoa que em breve farei outro projeto com o Guilherme.”`,
-    logoUrl: '/img/depositions/zgravitylogo.png',
-    name: 'Igor Zinsly - ZGravity',
-    job: 'CEO e Founder',
-    redirectUrl: 'https://www.zgravity.shop/',
-    pictureUrl: '/img/depositions/zgravitypicture.png',
   },
 ] satisfies SlideCardProps[]
 
@@ -75,7 +83,7 @@ export function DepositionsContainer() {
         }}
         autoplay={{
           delay: 5000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         pagination={{
           type: 'progressbar',
