@@ -30,7 +30,7 @@ export function CaseContent({
           boxShadow: `0 0 10px 0 ${color}`,
         }}
       >
-        <div className="p-4 lg:max-w-[45%] lg:p-0 2xl:max-w-[60%]">
+        <div className="p-4 lg:max-w-[45%] lg:p-0 2xl:max-w-[50%]">
           <img
             src={logo}
             className="max-w-[120px]"
