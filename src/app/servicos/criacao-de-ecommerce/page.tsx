@@ -41,7 +41,7 @@ export default async function EcServicePage() {
     variables: {
       last: 4,
       where: {
-        tags_every: {
+        tags_some: {
           slug: 'ecommerce',
         },
       },
