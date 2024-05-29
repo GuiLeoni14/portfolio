@@ -20,7 +20,7 @@ export default async function LpServicePage() {
     variables: {
       last: 4,
       where: {
-        tags_every: {
+        tags_some: {
           slug: 'landing-page',
         },
       },
@@ -86,7 +86,7 @@ export default async function LpServicePage() {
           <div className="mt-16">
             <ProcessCards />
           </div>
-          <div className="flex flex-col gap-8 pt-20 md:flex-row md:pt-40">
+          <div className="flex flex-col items-center gap-8 pt-20 md:flex-row md:pt-40">
             <CardHover className="mx-auto w-full max-w-[174px] md:max-w-[348px] lg:mx-0">
               <div
                 className="mx-auto flex h-[322px] max-w-[174px] flex-col items-start gap-2 rounded-md border border-transparent bg-gray-700 bg-cover bg-center bg-no-repeat
@@ -114,16 +114,11 @@ export default async function LpServicePage() {
                 Site responsivo é aquele que se dá bem em qualquer tamanho de
                 tela. Essa adaptação não é só técnica, ela também manda na
                 experiência que você tem no site e na satisfação geral com a
-                marca. Sacou?
+                marca.
               </p>
-              <img
-                className="mt-4 md:mt-auto"
-                src="https://zyro.com/cdn-cgi/image/w=1100,q=95,f=auto/images/landingWebsite/hero.png"
-                alt="Imagem de uma landing page | Desenvolvedor de sites"
-              />
             </div>
           </div>
-          <div className="flex flex-col gap-8 pt-20 md:pt-40 lg:flex-row">
+          <div className="flex flex-col items-center gap-8 pt-20 md:pt-40 lg:flex-row">
             <div className="flex-1">
               <h2 className="text-2xl font-bold md:text-4xl">
                 Sua landing page se encaixando em qualquer navegador
