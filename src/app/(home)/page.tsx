@@ -4,11 +4,12 @@ import { TechnologySlide } from '@/components/TechnologySlide'
 import { ServiceContainer } from './components/ServiceContainer'
 import { DepositionsContainer } from '@/components/DepositionsContainer'
 import { Metadata } from 'next'
-import { TitleAnimation } from './components/TitleAnimation'
 import { CallToAction } from '@/components/CallToAction'
 import { CaseContainer } from '@/components/CaseContainer'
 import { fetchCases } from '@/hooks/fetch/useCases'
 import { Code2 } from 'lucide-react'
+import { Cover } from '@/components/ui/cover'
+import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision'
 
 export const metadata: Metadata = {
   title: 'Página Inicial',
@@ -30,33 +31,28 @@ export default async function Home() {
 
   return (
     <main className="pt-[80px]">
-      <div
-        className="w-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://github.githubassets.com/images/modules/site/home-campaign/hero-bg.webp')`,
-        }}
-      >
-        <div className="container relative mx-auto pb-20 pt-72 md:pb-40">
-          <div className="lg:ml-[7.5rem]">
-            <img
-              src="/img/icons/lines-hero.svg"
-              className="pointer-events-none absolute left-[3.25rem] top-0 hidden lg:block"
-              alt="Linhas"
-            />
+      <BackgroundBeamsWithCollision className="h-[60rem] lg:h-[40rem]">
+        <div className="container relative mx-auto grid grid-cols-1 gap-5 py-40 text-center lg:grid-cols-2 lg:text-start">
+          <div>
+            {' '}
             <h1 className="hidden text-4xl font-semibold lg:text-6xl">
               Desenvolvedor de sites
             </h1>
             <h2 className="text-4xl font-semibold lg:text-6xl">
-              Construindo a solução digital para{' '}
+              Elevando sua ideia ao próximo nível,{' '}
+              <span className="cursor-pointer">
+                <Cover>
+                  além das{' '}
+                  <span className="bg-gradient-title bg-clip-text text-transparent">
+                    estrelas
+                  </span>
+                </Cover>
+              </span>
             </h2>
-            <TitleAnimation />
             <p className="mt-4 text-base text-gray-200 lg:text-2xl">
-              Olá! Sou Guilherme dos Reis Leoni, especializado em criar soluções
-              web personalizadas, desde landing pages envolventes até e-commerce
-              eficientes. Minha paixão pela tecnologia e inovação impulsiona
-              resultados excepcionais para elevar a presença online do seu
-              negócio. Vamos transformar suas ideias em realidade e destacar sua
-              marca no mundo digital. Entre em contato e vamos começar!
+              Desenvolvo soluções tecnológicas personalizadas que impulsionam o
+              sucesso do seu negócio. Não perca tempo com genéricos, invista na
+              inovação que seu projeto merece.
             </p>
             <div className="my-10 flex h-fit flex-col gap-2 md:flex-row md:gap-4">
               <Button asChild>
@@ -101,7 +97,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </BackgroundBeamsWithCollision>
       <ServiceContainer />
       <section className="relative">
         <div className="container mx-auto flex">

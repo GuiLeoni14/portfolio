@@ -59,12 +59,6 @@ export function CaseFlag({ title, subTitle, color, message }: CaseFlagProps) {
           <GradientArrow />
         </motion.div>
       </div>
-      <div
-        className="pointer-events-none absolute right-0 top-0 h-full w-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://github.githubassets.com/images/modules/site/home-campaign/bg-stars-1.webp')`,
-        }}
-      ></div>
       <motion.div className="h-full w-full">
         <TechnologySlide />
       </motion.div>

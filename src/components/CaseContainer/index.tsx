@@ -4,6 +4,7 @@ import { CaseContent } from './CaseContent'
 import { ReactNode, createContext, useState } from 'react'
 import { CaseLine } from './CaseLine'
 import { CaseFragment } from '@/graphql/generated'
+import { StarsBackground } from '../ui/stars-background'
 
 interface CaseContainerContextData {
   activeColor: string
@@ -57,6 +58,7 @@ export function CaseContainer({ cases }: CaseContainerProps) {
   return (
     <CaseContainerContextProvider>
       <div className="relative h-full overflow-hidden">
+        <StarsBackground />
         <CaseLine />
         {cases.map((job) => {
           return (
